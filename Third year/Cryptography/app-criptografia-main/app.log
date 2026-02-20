@@ -1,0 +1,291 @@
+2025-11-27 22:06:59,751 - INFO - Register attempt: user=mariana15
+2025-11-27 22:06:59,753 - WARNING - Register failed - weak password for user: mariana15
+2025-11-27 22:07:33,018 - INFO - Register attempt: user=mariana15
+2025-11-27 22:10:20,905 - INFO - Register attempt: user=mariana15
+2025-11-27 22:15:11,691 - INFO - Register attempt: user=mariana15
+2025-11-27 22:15:11,812 - INFO - Clave privada de mariana15 guardada en C:\Users\marti\app-criptografia\main\pki\usuarios\privado\mariana15key.pem
+2025-11-27 22:15:11,812 - INFO - Creando CSR para mariana15
+2025-11-27 22:15:12,725 - INFO - CSR creado en C:\Users\marti\app-criptografia\main\pki\ac2\solicitudes\mariana15req.pem
+2025-11-27 22:15:12,725 - INFO - AC2 firmando CSR C:\Users\marti\app-criptografia\main\pki\ac2\solicitudes\mariana15req.pem
+2025-11-27 22:15:12,772 - ERROR - openssl ca falló: Using configuration from C:\Users\marti\app-criptografia\main\pki\ac2\openssl_AC2.cnf
+Can't load C:\Users\marti/.rnd into RNG
+948A0000:error:12000079:random number generator:RAND_load_file:Cannot open file:crypto\rand\randfile.c:107:Filename=C:\Users\marti/.rnd
+Could not open file or uri for loading CA private key from .//privado/ca2key.pem: No such file or directory
+
+2025-11-27 22:17:40,388 - INFO - Register attempt: user=mariana15
+2025-11-27 22:17:40,531 - INFO - Clave privada de mariana15 guardada en C:\Users\marti\app-criptografia\main\pki\usuarios\privado\mariana15key.pem
+2025-11-27 22:17:40,531 - INFO - Creando CSR para mariana15
+2025-11-27 22:17:40,694 - INFO - CSR creado en C:\Users\marti\app-criptografia\main\pki\ac2\solicitudes\mariana15req.pem
+2025-11-27 22:17:40,694 - INFO - AC2 firmando CSR C:\Users\marti\app-criptografia\main\pki\ac2\solicitudes\mariana15req.pem
+2025-11-27 22:17:40,718 - ERROR - openssl ca falló: Using configuration from C:\Users\marti\app-criptografia\main\pki\ac2\openssl_AC2.cnf
+Could not open file or uri for loading CA private key from .//privado/ca2key.pem: No such file or directory
+
+2025-11-27 22:35:31,571 - INFO - Register attempt: user=mariana15
+2025-11-27 22:35:31,672 - INFO - Clave privada de mariana15 guardada en C:\Users\marti\app-criptografia\main\pki\usuarios\privado\mariana15key.pem
+2025-11-27 22:35:31,672 - INFO - Creando CSR para mariana15
+2025-11-27 22:35:31,752 - INFO - CSR creado en C:\Users\marti\app-criptografia\main\pki\ac2\solicitudes\mariana15req.pem
+2025-11-27 22:35:31,752 - INFO - AC2 firmando CSR C:\Users\marti\app-criptografia\main\pki\ac2\solicitudes\mariana15req.pem
+2025-11-27 22:35:31,777 - ERROR - openssl ca falló: Using configuration from C:\Users\marti\app-criptografia\main\pki\ac2\openssl_AC2.cnf
+Could not open file or uri for loading CA private key from .//privado/ca2key.pem: No such file or directory
+
+2025-11-27 22:38:10,889 - INFO - Register attempt: user=mariana15
+2025-11-27 22:38:11,036 - INFO - Clave privada de mariana15 guardada en C:\Users\marti\app-criptografia\main\pki\usuarios\privado\mariana15key.pem
+2025-11-27 22:38:11,037 - INFO - Creando CSR para mariana15
+2025-11-27 22:38:11,126 - INFO - CSR creado en C:\Users\marti\app-criptografia\main\pki\ac2\solicitudes\mariana15req.pem
+2025-11-27 22:38:11,126 - INFO - AC2 firmando CSR C:\Users\marti\app-criptografia\main\pki\ac2\solicitudes\mariana15req.pem
+2025-11-27 22:38:11,152 - ERROR - openssl ca falló: Using configuration from C:\Users\marti\app-criptografia\main\pki\ac2\openssl_AC2.cnf
+Could not open file or uri for loading CA private key from .//privado/ca2key.pem: No such file or directory
+
+2025-11-27 22:39:18,078 - INFO - Register attempt: user=mariana15
+2025-11-27 22:39:18,183 - INFO - Clave privada de mariana15 guardada en C:\Users\marti\app-criptografia\main\pki\usuarios\privado\mariana15key.pem
+2025-11-27 22:39:18,184 - INFO - Creando CSR para mariana15
+2025-11-27 22:39:18,234 - INFO - CSR creado en C:\Users\marti\app-criptografia\main\pki\ac2\solicitudes\mariana15req.pem
+2025-11-27 22:39:18,234 - INFO - AC2 firmando CSR C:\Users\marti\app-criptografia\main\pki\ac2\solicitudes\mariana15req.pem
+2025-11-27 22:39:18,258 - ERROR - openssl ca falló: Using configuration from C:\Users\marti\app-criptografia\main\pki\ac2\openssl_AC2.cnf
+Could not open file or uri for loading CA private key from .//privado/ca2key.pem: No such file or directory
+
+2025-11-27 22:48:58,180 - INFO - Register attempt: user=mariana15
+2025-11-27 22:48:58,332 - INFO - Clave privada de mariana15 guardada en C:\Users\marti\app-criptografia\main\pki\usuarios\privado\mariana15key.pem
+2025-11-27 22:48:58,333 - INFO - Creando CSR para mariana15
+2025-11-27 22:48:58,388 - INFO - CSR creado en C:\Users\marti\app-criptografia\main\pki\ac2\solicitudes\mariana15req.pem
+2025-11-27 22:48:58,388 - INFO - AC2 firmando CSR C:\Users\marti\app-criptografia\main\pki\ac2\solicitudes\mariana15req.pem
+2025-11-27 22:48:58,410 - ERROR - openssl ca falló: Using configuration from C:\Users\marti\app-criptografia\main\pki\ac2\openssl_AC2.cnf
+Could not open file or uri for loading CA private key from .//privado/ca2key.pem: No such file or directory
+
+2025-11-27 22:50:13,262 - INFO - Register attempt: user=mariana15
+2025-11-27 22:50:13,346 - INFO - Clave privada de mariana15 guardada en C:\Users\marti\app-criptografia\main\pki\usuarios\privado\mariana15key.pem
+2025-11-27 22:50:13,347 - INFO - Creando CSR para mariana15
+2025-11-27 22:50:13,411 - INFO - CSR creado en C:\Users\marti\app-criptografia\main\pki\ac2\solicitudes\mariana15req.pem
+2025-11-27 22:50:13,411 - INFO - AC2 firmando CSR C:\Users\marti\app-criptografia\main\pki\ac2\solicitudes\mariana15req.pem
+2025-11-27 22:50:13,436 - ERROR - openssl ca falló: Using configuration from C:\Users\marti\app-criptografia\main\pki\ac2\openssl_AC2.cnf
+Could not open file or uri for loading CA private key from .//privado/ca2key.pem: No such file or directory
+
+2025-11-27 22:57:35,072 - INFO - Register attempt: user=mariana15
+2025-11-27 22:57:35,195 - INFO - Clave privada de mariana15 guardada en C:\Users\marti\app-criptografia\main\pki\usuarios\privado\mariana15key.pem
+2025-11-27 22:57:35,196 - INFO - Creando CSR para mariana15
+2025-11-27 22:57:35,260 - INFO - CSR creado en C:\Users\marti\app-criptografia\main\pki\ac2\solicitudes\mariana15req.pem
+2025-11-27 22:57:35,260 - INFO - AC2 firmando CSR C:\Users\marti\app-criptografia\main\pki\ac2\solicitudes\mariana15req.pem
+2025-11-27 22:58:10,072 - ERROR - openssl ca falló: None
+2025-11-27 22:59:59,178 - INFO - Register attempt: user=Ana_15
+2025-11-27 22:59:59,404 - INFO - Clave privada de Ana_15 guardada en C:\Users\marti\app-criptografia\main\pki\usuarios\privado\Ana_15key.pem
+2025-11-27 22:59:59,405 - INFO - Creando CSR para Ana_15
+2025-11-27 22:59:59,455 - INFO - CSR creado en C:\Users\marti\app-criptografia\main\pki\ac2\solicitudes\Ana_15req.pem
+2025-11-27 22:59:59,455 - INFO - AC2 firmando CSR C:\Users\marti\app-criptografia\main\pki\ac2\solicitudes\Ana_15req.pem
+2025-11-27 22:59:59,477 - ERROR - openssl ca falló: Using configuration from C:\Users\marti\app-criptografia\main\pki\ac2\openssl_AC2.cnf
+Could not open file or uri for loading CA private key from .//privado/ca2key.pem: No such file or directory
+
+2025-11-27 23:02:32,343 - INFO - Register attempt: user=lOlA15
+2025-11-27 23:02:32,551 - INFO - Clave privada de lOlA15 guardada en C:\Users\marti\app-criptografia\main\pki\usuarios\privado\lOlA15key.pem
+2025-11-27 23:02:32,551 - INFO - Creando CSR para lOlA15
+2025-11-27 23:02:32,612 - INFO - CSR creado en C:\Users\marti\app-criptografia\main\pki\ac2\solicitudes\lOlA15req.pem
+2025-11-27 23:02:32,613 - INFO - AC2 firmando CSR C:\Users\marti\app-criptografia\main\pki\ac2\solicitudes\lOlA15req.pem
+2025-11-27 23:03:07,892 - INFO - Certificado de usuario creado y firmado por AC2
+2025-11-27 23:03:08,090 - INFO - Certificado de usuario guardado en C:\Users\marti\app-criptografia\main\pki\usuarios\lOlA15cert.pem
+2025-11-27 23:10:16,568 - INFO - Register attempt: user=blueberry15
+2025-11-27 23:11:29,730 - INFO - Register attempt: user=blueberry15
+2025-11-27 23:11:29,843 - INFO - Clave privada de blueberry15 guardada en C:\Users\marti\app-criptografia\main\pki\usuarios\privado\blueberry15key.pem
+2025-11-27 23:11:29,844 - INFO - Creando CSR para blueberry15
+2025-11-27 23:11:29,912 - INFO - CSR creado en C:\Users\marti\app-criptografia\main\pki\ac2\solicitudes\blueberry15req.pem
+2025-11-27 23:11:29,912 - INFO - AC2 firmando CSR C:\Users\marti\app-criptografia\main\pki\ac2\solicitudes\blueberry15req.pem
+2025-11-27 23:11:54,125 - INFO - Certificado de usuario creado y firmado por AC2
+2025-11-27 23:11:54,131 - INFO - Certificado de usuario guardado en C:\Users\marti\app-criptografia\main\pki\usuarios\blueberry15cert.pem
+2025-11-27 23:11:54,134 - INFO - User registered: blueberry15
+2025-11-27 23:12:37,698 - INFO - Login attempt: user=blueberry15
+2025-11-27 23:12:37,893 - INFO - Loading messages into log, count=0
+2025-11-27 23:12:37,897 - INFO - Login success: blueberry15
+2025-11-27 23:12:39,641 - INFO - Refreshed file list, count=0
+2025-11-27 23:12:39,641 - INFO - Refreshed file list, count=0
+2025-11-27 23:12:50,159 - INFO - Uploading file selected: path=C:/Users/marti/Downloads/routers_es.pdf user=blueberry15 size=573164
+2025-11-27 23:12:50,175 - INFO - File saved encrypted: routers_es.pdf owner=blueberry15
+2025-11-27 23:12:52,130 - INFO - Refreshed file list, count=1
+2025-11-27 23:13:13,547 - INFO - User logged out: blueberry15
+2025-11-27 23:13:49,630 - INFO - Register attempt: user=strawberry15
+2025-11-27 23:13:49,708 - INFO - Clave privada de strawberry15 guardada en C:\Users\marti\app-criptografia\main\pki\usuarios\privado\strawberry15key.pem
+2025-11-27 23:13:49,708 - INFO - Creando CSR para strawberry15
+2025-11-27 23:13:49,788 - INFO - CSR creado en C:\Users\marti\app-criptografia\main\pki\ac2\solicitudes\strawberry15req.pem
+2025-11-27 23:13:49,788 - INFO - AC2 firmando CSR C:\Users\marti\app-criptografia\main\pki\ac2\solicitudes\strawberry15req.pem
+2025-11-27 23:14:11,912 - INFO - Certificado de usuario creado y firmado por AC2
+2025-11-27 23:14:11,915 - INFO - Certificado de usuario guardado en C:\Users\marti\app-criptografia\main\pki\usuarios\strawberry15cert.pem
+2025-11-27 23:14:11,917 - INFO - User registered: strawberry15
+2025-11-27 23:14:18,341 - INFO - Login attempt: user=strawberry15
+2025-11-27 23:14:18,439 - INFO - Loading messages into log, count=0
+2025-11-27 23:14:18,439 - INFO - Login success: strawberry15
+2025-11-27 23:14:20,027 - INFO - Refreshed file list, count=0
+2025-11-27 23:14:20,028 - INFO - Refreshed file list, count=0
+2025-11-27 23:14:22,768 - INFO - Refreshed file list, count=0
+2025-11-27 23:14:29,385 - INFO - Uploading file selected: path=C:/Users/marti/Downloads/Statement_Lab_OpenSSL.pdf user=strawberry15 size=377207
+2025-11-27 23:14:29,390 - INFO - File saved encrypted: Statement_Lab_OpenSSL.pdf owner=strawberry15
+2025-11-27 23:14:30,757 - INFO - Refreshed file list, count=1
+2025-11-27 23:14:46,876 - INFO - Uploading file selected: path=C:/Users/marti/Downloads/cripto_notes.txt user=strawberry15 size=93
+2025-11-27 23:14:46,917 - INFO - Ejecutando: openssl verify -CAfile C:\Users\marti\AppData\Local\Temp\tmp46k8ytmg.pem C:\Users\marti\AppData\Local\Temp\tmpmfd97_5w.pem
+2025-11-27 23:14:46,957 - INFO - Certificado verificado: C:\Users\marti\AppData\Local\Temp\tmpmfd97_5w.pem: OK
+2025-11-27 23:14:46,962 - INFO - File saved encrypted: cripto_notes.txt owner=strawberry15
+2025-11-27 23:16:07,928 - INFO - Login attempt: user=strawberry15
+2025-11-27 23:16:08,032 - INFO - Loading messages into log, count=0
+2025-11-27 23:16:08,032 - INFO - Login success: strawberry15
+2025-11-27 23:16:09,869 - INFO - Refreshed file list, count=1
+2025-11-27 23:16:09,870 - INFO - Refreshed file list, count=2
+2025-11-27 23:16:44,082 - INFO - Ejecutando: openssl verify -CAfile C:\Users\marti\AppData\Local\Temp\tmpmfiotbef.pem C:\Users\marti\AppData\Local\Temp\tmpyf1ge745.pem
+2025-11-27 23:16:44,116 - INFO - Certificado verificado: C:\Users\marti\AppData\Local\Temp\tmpyf1ge745.pem: OK
+2025-11-27 23:16:45,621 - INFO - File published from mochila: Statement_Lab_OpenSSL.pdf by strawberry15
+2025-11-27 23:16:45,636 - INFO - Refreshed file list, count=2
+2025-11-27 23:16:45,636 - INFO - Refreshed file list, count=2
+2025-11-27 23:17:08,654 - INFO - User logged out: strawberry15
+2025-11-27 23:17:26,925 - INFO - Login attempt: user=blueberry15
+2025-11-27 23:17:27,017 - INFO - Loading messages into log, count=0
+2025-11-27 23:17:27,017 - INFO - Login success: blueberry15
+2025-11-27 23:17:28,560 - INFO - Refreshed file list, count=2
+2025-11-27 23:17:28,561 - INFO - Refreshed file list, count=1
+2025-11-27 23:18:18,263 - INFO - User logged out: blueberry15
+2025-11-27 23:18:38,699 - INFO - Register attempt: user=raspberry15
+2025-11-27 23:18:38,803 - INFO - Clave privada de raspberry15 guardada en C:\Users\marti\app-criptografia\main\pki\usuarios\privado\raspberry15key.pem
+2025-11-27 23:18:38,804 - INFO - Creando CSR para raspberry15
+2025-11-27 23:18:38,855 - INFO - CSR creado en C:\Users\marti\app-criptografia\main\pki\ac2\solicitudes\raspberry15req.pem
+2025-11-27 23:18:38,855 - INFO - AC2 firmando CSR C:\Users\marti\app-criptografia\main\pki\ac2\solicitudes\raspberry15req.pem
+2025-11-27 23:19:01,286 - INFO - Certificado de usuario creado y firmado por AC2
+2025-11-27 23:19:01,291 - INFO - Certificado de usuario guardado en C:\Users\marti\app-criptografia\main\pki\usuarios\raspberry15cert.pem
+2025-11-27 23:19:01,294 - INFO - User registered: raspberry15
+2025-11-27 23:19:08,428 - INFO - Login attempt: user=raspberry15
+2025-11-27 23:19:08,537 - INFO - Loading messages into log, count=0
+2025-11-27 23:19:08,537 - INFO - Login success: raspberry15
+2025-11-27 23:19:09,835 - INFO - Refreshed file list, count=2
+2025-11-27 23:19:09,836 - INFO - Refreshed file list, count=0
+2025-11-27 23:19:43,137 - INFO - Uploading file selected: path=C:/Users/marti/Downloads/es-proj2.pdf user=raspberry15 size=411459
+2025-11-27 23:19:43,163 - INFO - Ejecutando: openssl verify -CAfile C:\Users\marti\AppData\Local\Temp\tmpazabttu7.pem C:\Users\marti\AppData\Local\Temp\tmp_ao_cb84.pem
+2025-11-27 23:19:43,191 - INFO - Certificado verificado: C:\Users\marti\AppData\Local\Temp\tmp_ao_cb84.pem: OK
+2025-11-27 23:19:43,194 - INFO - File saved encrypted: es-proj2.pdf owner=raspberry15
+2025-11-27 23:19:45,444 - INFO - Refreshed file list, count=3
+2025-11-27 23:20:01,869 - INFO - Posting message by user=raspberry15 len=4
+2025-11-27 23:20:01,978 - INFO - Message stored for user=raspberry15 len=4
+2025-11-27 23:24:38,501 - INFO - Login attempt: user=strawberry15
+2025-11-27 23:24:38,652 - INFO - Loading messages into log, count=1
+2025-11-27 23:24:38,752 - INFO - Login success: strawberry15
+2025-11-27 23:24:40,685 - INFO - Refreshed file list, count=3
+2025-11-27 23:24:40,686 - INFO - Refreshed file list, count=2
+2025-11-27 23:30:01,564 - INFO - Login attempt: user=strawberry15
+2025-11-27 23:30:01,691 - INFO - Loading messages into log, count=1
+2025-11-27 23:30:01,789 - INFO - Login success: strawberry15
+2025-11-27 23:30:03,082 - INFO - Refreshed file list, count=0
+2025-11-27 23:30:03,082 - INFO - Refreshed file list, count=0
+2025-11-27 23:30:12,316 - INFO - Uploading file selected: path=C:/Users/marti/Downloads/routers_es.pdf user=strawberry15 size=573164
+2025-11-27 23:30:12,340 - INFO - File saved encrypted: routers_es.pdf owner=strawberry15
+2025-11-27 23:30:14,060 - INFO - Refreshed file list, count=1
+2025-11-27 23:30:21,210 - INFO - File downloaded and saved: C:/Users/marti/Downloads/routers_es.pdf user=strawberry15
+2025-11-27 23:30:36,604 - INFO - Refreshed file list, count=0
+2025-11-27 23:30:50,320 - INFO - Ejecutando: openssl verify -CAfile C:\Users\marti\AppData\Local\Temp\tmp48c85ize.pem C:\Users\marti\AppData\Local\Temp\tmprdqo6srr.pem
+2025-11-27 23:30:50,370 - INFO - Certificado verificado: C:\Users\marti\AppData\Local\Temp\tmprdqo6srr.pem: OK
+2025-11-27 23:30:51,978 - INFO - File published from mochila: routers_es.pdf by strawberry15
+2025-11-27 23:30:51,997 - INFO - Refreshed file list, count=1
+2025-11-27 23:30:51,997 - INFO - Refreshed file list, count=1
+2025-11-27 23:31:09,277 - INFO - Login attempt: user=blueberry15
+2025-11-27 23:31:09,335 - WARNING - Login failed - bad password for user: blueberry15
+2025-11-27 23:31:11,013 - INFO - Refreshed file list, count=1
+2025-11-27 23:31:11,013 - INFO - Refreshed file list, count=1
+2025-11-27 23:31:19,703 - INFO - Login attempt: user=blueberry15
+2025-11-27 23:31:19,782 - INFO - Loading messages into log, count=1
+2025-11-27 23:31:19,870 - INFO - Login success: blueberry15
+2025-11-27 23:31:21,210 - INFO - Refreshed file list, count=1
+2025-11-27 23:31:21,212 - INFO - Refreshed file list, count=0
+2025-11-27 23:31:25,180 - INFO - Refreshed file list, count=0
+2025-11-27 23:31:28,941 - INFO - Refreshed file list, count=1
+2025-11-27 23:31:35,746 - INFO - Ejecutando: openssl verify -CAfile C:\Users\marti\AppData\Local\Temp\tmpd6sd43_l.pem C:\Users\marti\AppData\Local\Temp\tmpkz93i6j9.pem
+2025-11-27 23:31:35,778 - INFO - Certificado verificado: C:\Users\marti\AppData\Local\Temp\tmpkz93i6j9.pem: OK
+2025-11-27 23:31:52,857 - INFO - Login attempt: user=raspberry15
+2025-11-27 23:31:52,906 - WARNING - Login failed - bad password for user: raspberry15
+2025-11-27 23:31:54,515 - INFO - Refreshed file list, count=1
+2025-11-27 23:31:54,515 - INFO - Refreshed file list, count=0
+2025-11-27 23:32:03,173 - INFO - Login attempt: user=raspberry15
+2025-11-27 23:32:03,298 - INFO - Loading messages into log, count=1
+2025-11-27 23:32:03,389 - INFO - Login success: raspberry15
+2025-11-27 23:32:04,501 - INFO - Refreshed file list, count=1
+2025-11-27 23:32:04,502 - INFO - Refreshed file list, count=0
+2025-11-27 23:32:08,603 - INFO - Refreshed file list, count=0
+2025-11-27 23:32:11,307 - INFO - Refreshed file list, count=1
+2025-11-27 23:41:17,983 - INFO - Ejecutando: openssl verify -CAfile C:\Users\marti\AppData\Local\Temp\tmp2iex3sda.pem C:\Users\marti\AppData\Local\Temp\tmpldi3rzas.pem
+2025-11-27 23:41:17,984 - INFO - Certificado verificado: tmp: OK
+2025-11-27 23:41:17,985 - INFO - Ejecutando: openssl verify -CAfile C:\Users\marti\AppData\Local\Temp\tmpocg6b8jc.pem C:\Users\marti\AppData\Local\Temp\tmp06cfskhq.pem
+2025-11-27 23:42:07,107 - INFO - Clave privada de alice guardada en C:\Users\marti\AppData\Local\Temp\tmpif9jmjz3\pki\usuarios\privado\alicekey.pem
+2025-11-27 23:42:07,108 - INFO - Creando CSR para alice
+2025-11-27 23:42:07,108 - INFO - CSR creado en C:\Users\marti\AppData\Local\Temp\tmpif9jmjz3\pki\ac2\solicitudes\alicereq.pem
+2025-11-27 23:42:07,108 - INFO - AC2 firmando CSR C:\Users\marti\AppData\Local\Temp\tmpif9jmjz3\pki\ac2\solicitudes\alicereq.pem
+2025-11-27 23:42:07,108 - INFO - Certificado de usuario creado y firmado por AC2
+2025-11-27 23:42:07,112 - INFO - Certificado de usuario guardado en C:\Users\marti\AppData\Local\Temp\tmpif9jmjz3\pki\usuarios\alicecert.pem
+2025-11-27 23:42:07,129 - INFO - Ejecutando: openssl verify -CAfile C:\Users\marti\AppData\Local\Temp\tmpecx36kr6.pem C:\Users\marti\AppData\Local\Temp\tmp2vwaih8e.pem
+2025-11-27 23:42:07,129 - INFO - Certificado verificado: tmp: OK
+2025-11-27 23:42:07,131 - INFO - Ejecutando: openssl verify -CAfile C:\Users\marti\AppData\Local\Temp\tmp_bdvdg4r.pem C:\Users\marti\AppData\Local\Temp\tmp0s6_jxgz.pem
+2025-11-27 23:42:50,133 - INFO - Clave privada de alice guardada en C:\Users\marti\AppData\Local\Temp\tmpa435lbs4\pki\usuarios\privado\alicekey.pem
+2025-11-27 23:42:50,134 - INFO - Creando CSR para alice
+2025-11-27 23:42:50,134 - INFO - CSR creado en C:\Users\marti\AppData\Local\Temp\tmpa435lbs4\pki\ac2\solicitudes\alicereq.pem
+2025-11-27 23:42:50,134 - INFO - AC2 firmando CSR C:\Users\marti\AppData\Local\Temp\tmpa435lbs4\pki\ac2\solicitudes\alicereq.pem
+2025-11-27 23:42:50,135 - INFO - Certificado de usuario creado y firmado por AC2
+2025-11-27 23:42:50,138 - INFO - Certificado de usuario guardado en C:\Users\marti\AppData\Local\Temp\tmpa435lbs4\pki\usuarios\alicecert.pem
+2025-11-27 23:42:50,156 - INFO - Ejecutando: openssl verify -CAfile C:\Users\marti\AppData\Local\Temp\tmpyxyxkg4o.pem C:\Users\marti\AppData\Local\Temp\tmp6nyg59e4.pem
+2025-11-27 23:42:50,156 - INFO - Certificado verificado: tmp: OK
+2025-11-27 23:42:50,158 - INFO - Ejecutando: openssl verify -CAfile C:\Users\marti\AppData\Local\Temp\tmp90a4tb5e.pem C:\Users\marti\AppData\Local\Temp\tmp940i1plu.pem
+2025-11-27 23:44:02,793 - INFO - Register attempt: user=blackberry15
+2025-11-27 23:44:02,893 - INFO - Clave privada de blackberry15 guardada en C:\Users\marti\app-criptografia\main\pki\usuarios\privado\blackberry15key.pem
+2025-11-27 23:44:02,894 - INFO - Creando CSR para blackberry15
+2025-11-27 23:44:02,961 - INFO - CSR creado en C:\Users\marti\app-criptografia\main\pki\ac2\solicitudes\blackberry15req.pem
+2025-11-27 23:44:02,961 - INFO - AC2 firmando CSR C:\Users\marti\app-criptografia\main\pki\ac2\solicitudes\blackberry15req.pem
+2025-11-27 23:44:26,447 - INFO - Certificado de usuario creado y firmado por AC2
+2025-11-27 23:44:26,450 - INFO - Certificado de usuario guardado en C:\Users\marti\app-criptografia\main\pki\usuarios\blackberry15cert.pem
+2025-11-27 23:44:26,453 - INFO - User registered: blackberry15
+2025-11-27 23:44:42,336 - INFO - Login attempt: user=blackberry15
+2025-11-27 23:44:42,438 - INFO - Loading messages into log, count=1
+2025-11-27 23:44:42,535 - INFO - Login success: blackberry15
+2025-11-27 23:44:43,927 - INFO - Refreshed file list, count=1
+2025-11-27 23:44:43,928 - INFO - Refreshed file list, count=0
+2025-11-27 23:44:53,379 - INFO - Uploading file selected: path=C:/Users/marti/Downloads/m4-3.pdf user=blackberry15 size=697719
+2025-11-27 23:44:53,390 - INFO - File saved encrypted: m4-3.pdf owner=blackberry15
+2025-11-27 23:44:54,969 - INFO - Refreshed file list, count=1
+2025-11-27 23:45:06,267 - INFO - File downloaded and saved: C:/Users/marti/Downloads/m4-3.pdf user=blackberry15
+2025-11-27 23:45:15,307 - INFO - Ejecutando: openssl verify -CAfile C:\Users\marti\AppData\Local\Temp\tmpiox0ab70.pem C:\Users\marti\AppData\Local\Temp\tmpr2s4mqth.pem
+2025-11-27 23:45:15,343 - INFO - Certificado verificado: C:\Users\marti\AppData\Local\Temp\tmpr2s4mqth.pem: OK
+2025-11-27 23:45:16,906 - INFO - File published from mochila: m4-3.pdf by blackberry15
+2025-11-27 23:45:16,923 - INFO - Refreshed file list, count=1
+2025-11-27 23:45:16,924 - INFO - Refreshed file list, count=2
+2025-11-27 23:45:56,810 - INFO - Uploading file selected: path=C:/Users/marti/Downloads/report.pdf user=blackberry15 size=11816077
+2025-11-27 23:45:56,852 - INFO - Ejecutando: openssl verify -CAfile C:\Users\marti\AppData\Local\Temp\tmpsidhhhgq.pem C:\Users\marti\AppData\Local\Temp\tmpoqorsx3x.pem
+2025-11-27 23:45:56,878 - INFO - Certificado verificado: C:\Users\marti\AppData\Local\Temp\tmpoqorsx3x.pem: OK
+2025-11-27 23:45:56,889 - INFO - File saved encrypted: report.pdf owner=blackberry15
+2025-11-27 23:45:59,703 - INFO - Refreshed file list, count=3
+2025-11-27 23:46:41,748 - INFO - Posting message by user=blackberry15 len=40
+2025-11-27 23:46:41,848 - INFO - Message stored for user=blackberry15 len=40
+2025-11-27 23:46:48,762 - INFO - User logged out: blackberry15
+2025-11-27 23:47:09,061 - INFO - Login attempt: user=strawberry15
+2025-11-27 23:47:09,163 - INFO - Loading messages into log, count=2
+2025-11-27 23:47:09,354 - INFO - Login success: strawberry15
+2025-11-27 23:47:10,735 - INFO - Refreshed file list, count=3
+2025-11-27 23:47:10,736 - INFO - Refreshed file list, count=1
+2025-11-27 23:47:21,266 - INFO - Ejecutando: openssl verify -CAfile C:\Users\marti\AppData\Local\Temp\tmph7g1o3wh.pem C:\Users\marti\AppData\Local\Temp\tmpdz2cj0s5.pem
+2025-11-27 23:47:21,304 - INFO - Certificado verificado: C:\Users\marti\AppData\Local\Temp\tmpdz2cj0s5.pem: OK
+2025-11-27 23:52:21,356 - INFO - Register attempt: user=cranberry15
+2025-11-27 23:52:21,637 - INFO - Clave privada de cranberry15 guardada en C:\Users\marti\app-criptografia\main\pki\usuarios\privado\cranberry15key.pem
+2025-11-27 23:52:21,637 - INFO - Creando CSR para cranberry15
+2025-11-27 23:52:21,719 - INFO - CSR creado en C:\Users\marti\app-criptografia\main\pki\ac2\solicitudes\cranberry15req.pem
+2025-11-27 23:52:21,719 - INFO - AC2 firmando CSR C:\Users\marti\app-criptografia\main\pki\ac2\solicitudes\cranberry15req.pem
+2025-11-27 23:52:40,649 - INFO - Certificado de usuario creado y firmado por AC2
+2025-11-27 23:52:40,653 - INFO - Certificado de usuario guardado en C:\Users\marti\app-criptografia\main\pki\usuarios\cranberry15cert.pem
+2025-11-27 23:52:40,657 - INFO - User registered: cranberry15
+2025-11-27 23:52:47,355 - INFO - Login attempt: user=cranberry15
+2025-11-27 23:52:48,150 - INFO - Loading messages into log, count=2
+2025-11-27 23:52:48,540 - INFO - Login success: cranberry15
+2025-11-27 23:52:50,211 - INFO - Refreshed file list, count=3
+2025-11-27 23:52:50,212 - INFO - Refreshed file list, count=0
+2025-11-27 23:53:15,398 - INFO - Uploading file selected: path=C:/Users/marti/Downloads/3_direccionamiento.pdf user=cranberry15 size=192525
+2025-11-27 23:53:15,436 - INFO - Ejecutando: openssl verify -CAfile C:\Users\marti\AppData\Local\Temp\tmp018pyvm1.pem C:\Users\marti\AppData\Local\Temp\tmpjzbjmkk1.pem
+2025-11-27 23:53:15,477 - INFO - Certificado verificado: C:\Users\marti\AppData\Local\Temp\tmpjzbjmkk1.pem: OK
+2025-11-27 23:53:15,483 - INFO - File saved encrypted: 3_direccionamiento.pdf owner=cranberry15
+2025-11-27 23:53:16,978 - INFO - Refreshed file list, count=4
+2025-11-27 23:53:36,646 - INFO - Login attempt: user=blackberry15
+2025-11-27 23:53:36,825 - INFO - Loading messages into log, count=2
+2025-11-27 23:53:37,095 - INFO - Login success: blackberry15
+2025-11-27 23:53:39,493 - INFO - Refreshed file list, count=4
+2025-11-27 23:53:39,495 - INFO - Refreshed file list, count=2
+2025-11-27 23:53:53,330 - INFO - Ejecutando: openssl verify -CAfile C:\Users\marti\AppData\Local\Temp\tmpdpdlxyzg.pem C:\Users\marti\AppData\Local\Temp\tmpi5jugvua.pem
+2025-11-27 23:53:53,369 - INFO - Certificado verificado: C:\Users\marti\AppData\Local\Temp\tmpi5jugvua.pem: OK
+2025-11-27 23:54:02,795 - INFO - File downloaded and saved: C:/Users/marti/Downloads/report.pdf user=blackberry15
+2025-11-27 23:54:16,294 - INFO - Uploading file selected: path=C:/Users/marti/Downloads/es-ex-m4-01.pdf user=blackberry15 size=333936
+2025-11-27 23:54:16,299 - INFO - File saved encrypted: es-ex-m4-01.pdf owner=blackberry15
+2025-11-27 23:54:17,934 - INFO - Refreshed file list, count=3
+2025-11-27 23:54:24,408 - INFO - User logged out: blackberry15
