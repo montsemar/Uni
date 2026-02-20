@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Resultados de búsqueda - Nomad Trails">
+    <title>Resultados de búsqueda - Nomad Trails</title>
+    <link rel="stylesheet" href="style/main.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <div class="header__logo">
+                    <a href="index.html" style="display: flex; align-items: center; gap: 1rem;">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <rect width="40" height="40" rx="8" fill="#8B4513"/>
+                            <path d="M20 10L28 18L20 26L12 18L20 10Z" fill="#F4E4C1"/>
+                        </svg>
+                        <span class="header__brand">Nomad Trails</span>
+                    </a>
+                </div>
+                <button class="header__menu-toggle" data-i18n-aria-label="header.openMenu" aria-label="Abrir menú" aria-expanded="false">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                </button>
+                <nav class="header__nav" aria-label="Navegación principal">
+                    <ul class="nav__list">
+                        <li><a href="explore.html" class="nav__link" data-i18n="nav.explore">🧭 Explorar</a></li>
+                        <li><a href="#booking" class="nav__link" data-i18n="nav.booking">🎫 Reservas</a></li>
+                        <li><a href="#itinerary" class="nav__link" data-i18n="nav.itinerary">📋 Itinerarios</a></li>
+                        <li><a href="#community" class="nav__link" data-i18n="nav.community">💬 Comunidad</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header__actions">
+                    <button class="btn-lang" id="lang-toggle" data-i18n-aria-label="header.changeLanguage" aria-label="Cambiar idioma">
+                        <span class="lang-icon">🌐</span>
+                        <span class="lang-text" data-i18n="lang.current">ES</span>
+                    </button>
+                    <a href="perfil.html#favorites" class="btn-icon" id="favorites-link" data-i18n-aria-label="header.favorites" aria-label="Ver favoritos">
+                        <span class="icon-heart">🤍</span>
+                        <span class="favorites-count" id="favorites-count">0</span>
+                    </a>
+                    <button class="btn-primary" id="user-session" data-i18n="header.login">Iniciar Sesión</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Search Bar Section -->
+    <div class="search-bar-section">
+        <div class="container">
+            <div class="search-box search-box--results">
+                <label for="search-input" class="sr-only" data-i18n="search.label">Buscar destino</label>
+                <div class="search-box__input-wrapper">
+                    <span class="search-box__icon" aria-hidden="true">🔍</span>
+                    <input 
+                        role="combobox"
+                        type="text" 
+                        id="search-input" 
+                        class="search-box__input" 
+                        placeholder="Buscar destinos..."
+                        data-i18n-placeholder="search.placeholder"
+                        autocomplete="off"
+                        aria-autocomplete="list"
+                        aria-controls="search-suggestions"
+                        aria-expanded="false"
+                    >
+                    <button class="search-box__clear" id="search-clear" aria-label="Limpiar búsqueda" hidden>✕</button>
+                </div>
+                <ul id="search-suggestions" class="search-suggestions" role="listbox" hidden></ul>
+            </div>
+            
+            <div class="search-filters">
+                <button class="filter-chip filter-chip--active" data-filter="all" data-i18n="filters.all">
+                    🌍 Todos
+                </button>
+                <button class="filter-chip" data-filter="Europa">
+                    🏰 Europa
+                </button>
+                <button class="filter-chip" data-filter="Asia">
+                    🏯 Asia
+                </button>
+                <button class="filter-chip" data-filter="América">
+                    🗽 América
+                </button>
+                <button class="filter-chip" data-filter="África">
+                    🦁 África
+                </button>
+                <button class="filter-chip" data-filter="Oceanía">
+                    🏝️ Oceanía
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Results Section -->
+    <main class="main results-main">
+        <div class="container">
+            <section class="results-section">
+                <div class="results-header">
+                    <h1 class="results-title" id="results-title">
+                        <span data-i18n="results.title">Resultados de búsqueda</span>
+                    </h1>
+                    <p class="results-count" id="results-count">
+                        <span class="results-count__loading">Buscando...</span>
+                    </p>
+                </div>
+                
+                <div class="results-content">
+                    <!-- Sidebar filters -->
+                    <aside class="results-sidebar">
+                        <h2 class="sidebar-title" data-i18n="results.filters">Filtros</h2>
+                        
+                        <div class="filter-group">
+                            <h3 class="filter-group__title" data-i18n="results.priceRange">Rango de precio</h3>
+                            <div class="price-range">
+                                <input type="range" id="price-min" min="0" max="3000" value="0" step="100" class="price-slider">
+                                <input type="range" id="price-max" min="0" max="3000" value="3000" step="100" class="price-slider">
+                                <div class="price-labels">
+                                    <span id="price-min-label">$0</span>
+                                    <span id="price-max-label">$3000</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <h3 class="filter-group__title" data-i18n="results.sortBy">Ordenar por</h3>
+                            <select id="sort-select" class="sort-select">
+                                <option value="relevance" data-i18n="results.relevance">Relevancia</option>
+                                <option value="price-asc" data-i18n="results.priceLowHigh">Precio: Menor a Mayor</option>
+                                <option value="price-desc" data-i18n="results.priceHighLow">Precio: Mayor a Menor</option>
+                                <option value="name" data-i18n="results.name">Nombre A-Z</option>
+                            </select>
+                        </div>
+                        
+                        <button class="btn-clear-filters" id="clear-filters" data-i18n="results.clearFilters">
+                            Limpiar filtros
+                        </button>
+                    </aside>
+                    
+                    <!-- Results grid -->
+                    <div class="results-grid-wrapper">
+                        <div class="destinations-grid" id="results-grid">
+                            <!-- Loading skeletons -->
+                            <div class="destination-card skeleton">
+                                <div class="skeleton-image"></div>
+                                <div class="skeleton-content">
+                                    <div class="skeleton-text"></div>
+                                    <div class="skeleton-text skeleton-text--short"></div>
+                                </div>
+                            </div>
+                            <div class="destination-card skeleton">
+                                <div class="skeleton-image"></div>
+                                <div class="skeleton-content">
+                                    <div class="skeleton-text"></div>
+                                    <div class="skeleton-text skeleton-text--short"></div>
+                                </div>
+                            </div>
+                            <div class="destination-card skeleton">
+                                <div class="skeleton-image"></div>
+                                <div class="skeleton-content">
+                                    <div class="skeleton-text"></div>
+                                    <div class="skeleton-text skeleton-text--short"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Pagination -->
+                        <div class="pagination" id="pagination" hidden>
+                            <button class="pagination__btn pagination__btn--prev" id="prev-page" aria-label="Página anterior">
+                                ← <span data-i18n="pagination.previous">Anterior</span>
+                            </button>
+                            <div class="pagination__pages" id="pagination-pages"></div>
+                            <button class="pagination__btn pagination__btn--next" id="next-page" aria-label="Página siguiente">
+                                <span data-i18n="pagination.next">Siguiente</span> →
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__content">
+                <div class="footer__section footer__brand">
+                    <div class="footer__logo">
+                        <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="40" height="40" rx="8" fill="#8B4513"/>
+                            <path d="M20 10L28 18L20 26L12 18L20 10Z" fill="#F4E4C1"/>
+                        </svg>
+                        <span>Nomad Trails</span>
+                    </div>
+                    <p class="footer__tagline" data-i18n="footer.tagline">Tu compañero de viajes auténticos</p>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__title" data-i18n="footer.links">Enlaces</h4>
+                    <ul class="footer__links">
+                        <li class="footer__link"><a href="explore.html" data-i18n="footer.explore">Explorar</a></li>
+                        <li class="footer__link"><a href="comunidad.html" data-i18n="footer.community">Comunidad</a></li>
+                        <li class="footer__link"><a href="reservas.html" data-i18n="footer.bookings">Reservas</a></li>
+                        <li class="footer__link"><a href="ayuda.html" data-i18n="footer.help">Ayuda</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__title" data-i18n="footer.legal">Legal</h4>
+                    <ul class="footer__links">
+                        <li class="footer__link"><a href="#privacidad" data-i18n="footer.privacy">Privacidad</a></li>
+                        <li class="footer__link"><a href="#terminos" data-i18n="footer.terms">Términos</a></li>
+                        <li class="footer__link"><a href="#cookies" data-i18n="footer.cookies">Cookies</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__title" data-i18n="footer.contact">Contacto</h4>
+                    <div class="footer__contact-item">
+                        <span>📧</span>
+                        <a href="mailto:soporte@nomadtrails.com">soporte@nomadtrails.com</a>
+                    </div>
+                    <div class="footer__contact-item">
+                        <span>📞</span>
+                        <a href="tel:+34900123456">+34 900 123 456</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p class="footer__text" data-i18n="footer.rights">&copy; 2025 Nomad Trails. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget" id="chat-widget">
+        <button class="chat-widget__toggle" id="chat-toggle" aria-label="Abrir chat de asistencia">
+            <span class="chat-icon">💬</span>
+        </button>
+        <div class="chat-widget__window" id="chat-window" hidden>
+            <div class="chat-header">
+                <h3 data-i18n="chat.title">Asistencia</h3>
+                <button class="chat-close" id="chat-close" aria-label="Cerrar chat">✕</button>
+            </div>
+            <div class="chat-messages" id="chat-messages">
+                <div class="chat-message chat-message--bot">
+                    <p data-i18n="chat.welcome">¡Hola! ¿En qué puedo ayudarte hoy?</p>
+                </div>
+            </div>
+            <div class="chat-input-wrapper">
+                <label for="chat-input" class="sr-only" data-i18n="chat.inputLabel">Escribe tu mensaje</label>
+                <input type="text" id="chat-input" class="chat-input" placeholder="Escribe tu mensaje..." data-i18n-placeholder="chat.inputPlaceholder">
+                <button class="chat-send" id="chat-send" aria-label="Enviar mensaje">📤</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="script/utils.js"></script>
+    <script src="script/i18n.js"></script>
+    <script src="script/destinations.js"></script>
+    <script src="script/search.js"></script>
+    <script src="script/favorites.js"></script>
+    <script src="script/chat.js"></script>
+    <script src="script/results.js"></script>

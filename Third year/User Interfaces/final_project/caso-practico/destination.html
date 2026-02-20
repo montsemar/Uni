@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Descubre destinos increíbles con Nomad Trails">
+    <title id="page-title">Destino - Nomad Trails</title>
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/destination.css">
+    <link rel="stylesheet" href="style/auth.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <div class="header__logo">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <rect width="40" height="40" rx="8" fill="#8B4513"/>
+                        <path d="M20 10L28 18L20 26L12 18L20 10Z" fill="#F4E4C1"/>
+                    </svg>
+                    <span class="header__brand">Nomad Trails</span>
+                </div>
+                <button class="header__menu-toggle" data-i18n-aria-label="header.openMenu" aria-label="Abrir menú" aria-expanded="false">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                </button>
+                <nav class="header__nav" aria-label="Navegación principal">    
+                    <ul class="nav__list">
+                        <li><a href="explore.html" class="nav__link" data-i18n="nav.explore">🧭 Explorar</a></li>
+                        <li><a href="comunidad.html" class="nav__link" data-i18n="nav.community">💬 Comunidad</a></li>
+                        <li><a href="reservas.html" class="nav__link" data-i18n="nav.booking">🎫 Reservas</a></li>
+                        <li><a href="ayuda.html" class="nav__link" data-i18n="nav.help">❓ Ayuda</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header__actions">
+                    <button class="btn-lang" id="lang-toggle" data-i18n-aria-label="header.changeLanguage" aria-label="Cambiar idioma">
+                        <span class="lang-icon">🌐</span>
+                        <span class="lang-text" data-i18n="lang.current">ES</span>
+                    </button>
+                    <a href="perfil.html#favorites" class="btn-icon" id="favorites-link" data-i18n-aria-label="header.favorites" aria-label="Ver favoritos">
+                        <span class="icon-heart">🤍</span>
+                        <span class="favorites-count" id="favorites-count">0</span>
+                    </a>
+                    <button class="btn-primary" id="user-session" data-i18n="header.login">Iniciar Sesión</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Destination Hero -->
+    <section class="destination-hero" id="destination-hero">
+        <div class="destination-hero__image-wrapper">
+            <img src="https://ejemplo.com/imagen.jpg" alt="" class="destination-hero__image" id="hero-image">
+            <div class="destination-hero__overlay"></div>
+        </div>
+        
+        <div class="container">
+            <div class="destination-hero__content">
+                <div class="destination-hero__main">
+                    <h1 class="destination-hero__title" id="destination-title">
+                        <span class="skeleton-text skeleton-text--hero">-</span>
+                    </h1>
+                    <p class="destination-hero__location" id="destination-location">
+                        <span class="skeleton-text skeleton-text--short">-</span>
+                    </p>
+                    
+                    <div class="destination-hero__tags" id="destination-tags">
+                        <!-- Tags se generarán dinámicamente -->
+                    </div>
+                </div>
+                
+                <div class="destination-hero__actions">
+                    <button class="btn-icon btn-icon--large" id="share-btn" aria-label="Compartir destino" title="Compartir">
+                        <span class="icon">🔗</span>
+                    </button>
+                    <button class="btn-icon btn-icon--large" id="favorite-btn" aria-label="Añadir a favoritos" title="Favorito">
+                        <span class="icon">🤍</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main destination-main">
+        <div class="container">
+            <div class="destination-layout">
+                <!-- Left Column - Content -->
+                <div class="destination-content">
+                    <!-- Description -->
+                    <section class="content-section">
+                        <h2 class="content-section__title" data-i18n="destination.description">Descripción</h2>
+                        <div class="content-section__body">
+                            <p id="destination-description" class="destination-description">
+                                <span class="skeleton-text"></span>
+                                <span class="skeleton-text"></span>
+                                <span class="skeleton-text skeleton-text--short"></span>
+                            </p>
+                        </div>
+                    </section>
+
+                    <!-- Included -->
+                    <section class="content-section">
+                        <h2 class="content-section__title" data-i18n="destination.included">Incluido</h2>
+                        <div class="content-section__body">
+                            <ul class="included-list" id="included-list">
+                                <li data-i18n="destination.included1">✓ Alojamiento en un hotel de 4 estrellas</li>
+                                <li data-i18n="destination.included2">✓ Desayuno</li>
+                                <li data-i18n="destination.included3">✓ Guía turístico local</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- Travel Calculator -->
+                    <div class="content-section accordion-section">
+                        <button class="accordion-header" aria-expanded="false" aria-controls="calculator-content">
+                            <span class="content-section__title" data-i18n="destination.calculator">Calculadora de viaje</span>
+                            <span class="accordion-icon">▼</span>
+                        </button>
+                        <div id="calculator-content" class="accordion-content" hidden>
+                            <div class="calculator">
+                                <div class="calculator-grid">
+                                    <div class="calculator-field">
+                                        <label for="calc-nights" class="calculator-label" data-i18n="calculator.nights">Noches</label>
+                                        <input type="number" id="calc-nights" class="calculator-input" min="1" value="3">
+                                    </div>
+                                    
+                                    <div class="calculator-field">
+                                        <label for="calc-hotel" class="calculator-label" data-i18n="calculator.hotelPerNight">Hotel por noche</label>
+                                        <input type="number" id="calc-hotel" class="calculator-input" min="0" value="100">
+                                    </div>
+                                    
+                                    <div class="calculator-field">
+                                        <label for="calc-meals" class="calculator-label" data-i18n="calculator.mealsPerDay">Comidas por día</label>
+                                        <input type="number" id="calc-meals" class="calculator-input" min="0" value="50">
+                                    </div>
+                                    
+                                    <div class="calculator-field">
+                                        <label for="calc-car" class="calculator-label" data-i18n="calculator.carRental">Alquiler de coche</label>
+                                        <input type="number" id="calc-car" class="calculator-input" min="0" value="40">
+                                    </div>
+                                    
+                                    <div class="calculator-field">
+                                        <label for="calc-transport" class="calculator-label" data-i18n="calculator.transport">Transporte</label>
+                                        <input type="number" id="calc-transport" class="calculator-input" min="0" value="200">
+                                    </div>
+                                </div>
+                                
+                                <div class="calculator-result">
+                                    <span class="calculator-result__label" data-i18n="calculator.total">Total estimado:</span>
+                                    <span class="calculator-result__value" id="calc-total">$0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Accessibility -->
+                    <div class="content-section accordion-section">
+                        <button class="accordion-header" aria-expanded="false" aria-controls="accessibility-content">
+                            <span class="content-section__title" data-i18n="destination.accessibility">Accesibilidad</span>
+                            <span class="accordion-icon">▼</span>
+                        </button>
+                        <div id="accessibility-content" class="accordion-content" hidden>
+                            <ul class="info-list">
+                                <li data-i18n="destination.accessibility1">♿ Acceso para sillas de ruedas</li>
+                                <li data-i18n="destination.accessibility2">🚻 Baños adaptados</li>
+                                <li data-i18n="destination.accessibility3">🅿️ Estacionamiento accesible</li>
+                                <li data-i18n="destination.accessibility4">🦮 Perros guía permitidos</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Cancellation Policy -->
+                    <div class="content-section accordion-section">
+                        <button class="accordion-header" aria-expanded="false" aria-controls="cancellation-content">
+                            <span class="content-section__title" data-i18n="destination.cancellation">Política de cancelación</span>
+                            <span class="accordion-icon">▼</span>
+                        </button>
+                        <div id="cancellation-content" class="accordion-content" hidden>
+                            <ul class="info-list">
+                                <li data-i18n="destination.cancellationFree">Cancelación gratuita hasta 48 horas antes</li>
+                                <li data-i18n="destination.cancellationPartial">50% de reembolso entre 48-24 horas</li>
+                                <li data-i18n="destination.cancellationNo">Sin reembolso con menos de 24 horas</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Help -->
+                    <div class="content-section accordion-section">
+                        <button class="accordion-header" aria-expanded="false" aria-controls="help-content">
+                            <span class="content-section__title" data-i18n="destination.help">Ayuda</span>
+                            <span class="accordion-icon">▼</span>
+                        </button>
+                        <div id="help-content" class="accordion-content" hidden>
+                            <div class="help-content">
+                                <p data-i18n="destination.helpText">¿Necesitas ayuda con tu reserva? Contacta con nuestro equipo de soporte.</p>
+                                <button class="btn-secondary" id="contact-support" data-i18n="destination.contactSupport">
+                                    Contactar soporte
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column - Booking Card -->
+                <aside class="booking-card" id="booking-card">
+                    <div class="booking-card__content">
+                        <div class="booking-card__price">
+                            <span class="booking-card__from" data-i18n="booking.from">Desde</span>
+                            <span class="booking-card__amount" id="booking-price">$1200</span>
+                            <span class="booking-card__per" data-i18n="booking.perPerson">por persona</span>
+                        </div>
+                        
+                        <ul class="booking-card__features">
+                            <li data-i18n="booking.freeCancellation">Cancelación gratuita</li>
+                            <li data-i18n="booking.reserveAdvance">Reserve con antelación</li>
+                            <li data-i18n="booking.bestPrice">Mejor precio garantizado</li>
+                        </ul>
+                        
+                        <button class="btn-primary btn-primary--large" id="book-now" data-i18n="booking.bookNow">
+                            Reservar ahora
+                        </button>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__content">
+                <div class="footer__section footer__brand">
+                    <div class="footer__logo">
+                        <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="40" height="40" rx="8" fill="#8B4513"/>
+                            <path d="M20 10L28 18L20 26L12 18L20 10Z" fill="#F4E4C1"/>
+                        </svg>
+                        <span>Nomad Trails</span>
+                    </div>
+                    <p class="footer__tagline" data-i18n="footer.tagline">Tu compañero de viajes auténticos</p>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__title" data-i18n="footer.links">Enlaces</h4>
+                    <ul class="footer__links">
+                        <li class="footer__link"><a href="explore.html" data-i18n="footer.explore">Explorar</a></li>
+                        <li class="footer__link"><a href="comunidad.html" data-i18n="footer.community">Comunidad</a></li>
+                        <li class="footer__link"><a href="reservas.html" data-i18n="footer.bookings">Reservas</a></li>
+                        <li class="footer__link"><a href="ayuda.html" data-i18n="footer.help">Ayuda</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__title" data-i18n="footer.legal">Legal</h4>
+                    <ul class="footer__links">
+                        <li class="footer__link"><a href="#privacidad" data-i18n="footer.privacy">Privacidad</a></li>
+                        <li class="footer__link"><a href="#terminos" data-i18n="footer.terms">Términos</a></li>
+                        <li class="footer__link"><a href="#cookies" data-i18n="footer.cookies">Cookies</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__title" data-i18n="footer.contact">Contacto</h4>
+                    <div class="footer__contact-item">
+                        <span>📧</span>
+                        <a href="mailto:soporte@nomadtrails.com">soporte@nomadtrails.com</a>
+                    </div>
+                    <div class="footer__contact-item">
+                        <span>📞</span>
+                        <a href="tel:+34900123456">+34 900 123 456</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p class="footer__text" data-i18n="footer.rights">&copy; 2025 Nomad Trails. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="script/demo-users.js"></script>
+    <script src="script/auth.js"></script>
+    <script src="script/utils.js"></script>
+    <script src="script/i18n.js"></script>
+    <script src="script/destinations.js"></script>
+    <script src="script/favorites.js"></script>
+    <script src="script/reviews.js"></script>
+    <script src="script/destination.js"></script>
+    <script src="script/main.js"></script>
+</body>
+</html>

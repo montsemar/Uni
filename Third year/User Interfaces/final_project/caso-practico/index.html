@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nomad Trails - Descubre los mejores destinos de viaje alrededor del mundo">
+    <title>Nomad Trails - Tu próxima aventura comienza aquí</title>
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/auth.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <div class="header__logo">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <rect width="40" height="40" rx="8" fill="#8B4513"/>
+                        <path d="M20 10L28 18L20 26L12 18L20 10Z" fill="#F4E4C1"/>
+                    </svg>
+                    <span class="header__brand">Nomad Trails</span>
+                </div>
+                <button class="header__menu-toggle" data-i18n-aria-label="header.openMenu" aria-label="Abrir menú" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <nav class="header__nav" aria-label="Navegación principal">
+                    <ul class="nav__list">
+                        <li><a href="explore.html" class="nav__link" data-i18n="nav.explore">🧭 Explorar</a></li>
+                        <li><a href="comunidad.html" class="nav__link" data-i18n="nav.community">💬 Comunidad</a></li>
+                        <li><a href="reservas.html" class="nav__link" data-i18n="nav.booking">🎫 Reservas</a></li>
+                        <li><a href="ayuda.html" class="nav__link" data-i18n="nav.help">❓ Ayuda</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header__actions">
+                    <button class="btn-lang" id="lang-toggle" data-i18n-aria-label="header.changeLanguage" aria-label="Cambiar idioma">
+                        <span class="lang-icon">🌐</span>
+                        <span class="lang-text" data-i18n="lang.current">ES</span>
+                    </button>
+                    <a href="perfil.html#favorites" class="btn-icon" id="favorites-link" data-i18n-aria-label="header.favorites" aria-label="Ver favoritos">
+                        <span class="icon-heart">🤍</span>
+                        <span class="favorites-count" id="favorites-count">0</span>
+                    </a>
+                    <button class="btn-primary" id="user-session" data-i18n="header.login">Iniciar Sesión</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero__title" data-i18n="hero.title">Descubre tu próximo destino</h1>
+            <p class="hero__subtitle" data-i18n="hero.subtitle">Explora el mundo con Nomad Trails</p>
+            
+            <div class="search-box">
+                <label for="search-input" class="sr-only" data-i18n="search.label">Buscar destino</label>
+                <div class="search-box__input-wrapper">
+                    <span class="search-box__icon" aria-hidden="true">🔍</span>
+                    <input
+                        role="combobox"
+                        type="text" 
+                        id="search-input" 
+                        class="search-box__input" 
+                        placeholder="Buscar destinos..."
+                        data-i18n-placeholder="search.placeholder"
+                        autocomplete="off"
+                        aria-autocomplete="list"
+                        aria-controls="search-suggestions"
+                        aria-expanded="false"
+                    >
+                    <button class="search-box__clear" id="search-clear" aria-label="Limpiar búsqueda" hidden>✕</button>
+                </div>
+                <ul id="search-suggestions" class="search-suggestions" role="listbox" hidden></ul>
+            </div>
+            
+            <div class="hero__filters">
+                <button class="filter-chip filter-chip--active" data-filter="all" data-i18n="filters.all">
+                    🌍 Todos
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Destinations -->
+    <main class="main">
+        <div class="container">
+            <section class="featured-section">
+                <div class="section-header">
+                    <h2 class="section-title" data-i18n="featured.title">
+                        Destinos Destacados
+                        <svg class="section-title__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M13 10V3L4 14h7v7l9-11h-7z" fill="currentColor"/>
+                        </svg>
+                    </h2>
+                    <a href="explore.html" class="section-link" data-i18n="featured.viewAll">Ver todos →</a>
+                </div>
+                
+                <div class="destinations-grid" id="destinations-grid">
+                    <!-- Cards se generarán dinámicamente con JavaScript -->
+                    <div class="destination-card skeleton">
+                        <div class="skeleton-image"></div>
+                        <div class="skeleton-content">
+                            <div class="skeleton-text"></div>
+                            <div class="skeleton-text skeleton-text--short"></div>
+                        </div>
+                    </div>
+                    <div class="destination-card skeleton">
+                        <div class="skeleton-image"></div>
+                        <div class="skeleton-content">
+                            <div class="skeleton-text"></div>
+                            <div class="skeleton-text skeleton-text--short"></div>
+                        </div>
+                    </div>
+                    <div class="destination-card skeleton">
+                        <div class="skeleton-image"></div>
+                        <div class="skeleton-content">
+                            <div class="skeleton-text"></div>
+                            <div class="skeleton-text skeleton-text--short"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__content">
+                <div class="footer__section footer__brand">
+                    <div class="footer__logo">
+                        <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="40" height="40" rx="8" fill="#8B4513"/>
+                            <path d="M20 10L28 18L20 26L12 18L20 10Z" fill="#F4E4C1"/>
+                        </svg>
+                        <span>Nomad Trails</span>
+                    </div>
+                    <p class="footer__tagline" data-i18n="footer.tagline">Tu compañero de viajes auténticos</p>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__title" data-i18n="footer.links">Enlaces</h4>
+                    <ul class="footer__links">
+                        <li class="footer__link"><a href="explore.html" data-i18n="footer.explore">Explorar</a></li>
+                        <li class="footer__link"><a href="comunidad.html" data-i18n="footer.community">Comunidad</a></li>
+                        <li class="footer__link"><a href="reservas.html" data-i18n="footer.bookings">Reservas</a></li>
+                        <li class="footer__link"><a href="ayuda.html" data-i18n="footer.help">Ayuda</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__title" data-i18n="footer.legal">Legal</h4>
+                    <ul class="footer__links">
+                        <li class="footer__link"><a href="#privacidad" data-i18n="footer.privacy">Privacidad</a></li>
+                        <li class="footer__link"><a href="#terminos" data-i18n="footer.terms">Términos</a></li>
+                        <li class="footer__link"><a href="#cookies" data-i18n="footer.cookies">Cookies</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__title" data-i18n="footer.contact">Contacto</h4>
+                    <div class="footer__contact-item">
+                        <span>📧</span>
+                        <a href="mailto:soporte@nomadtrails.com">soporte@nomadtrails.com</a>
+                    </div>
+                    <div class="footer__contact-item">
+                        <span>📞</span>
+                        <a href="tel:+34900123456">+34 900 123 456</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p class="footer__text" data-i18n="footer.rights">&copy; 2025 Nomad Trails. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="script/demo-users.js"></script>
+    <script src="script/auth.js"></script>
+    <script src="script/utils.js"></script>
+    <script src="script/home.js"></script>
+    <script src="script/i18n.js"></script>
+    <script src="script/destinations.js"></script>
+    <script src="script/search.js"></script>
+    <script src="script/favorites.js"></script>
+    <script src="script/chat.js"></script>
+    <script src="script/main.js"></script>
+</body>
+</html>

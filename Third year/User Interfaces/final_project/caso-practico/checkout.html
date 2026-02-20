@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Completar Reserva - Nomad Trails</title>
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/checkout.css">
+    <link rel="stylesheet" href="style/auth.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <div class="header__logo">
+                    <a href="index.html" style="display: flex; align-items: center; gap: 1rem;">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <rect width="40" height="40" rx="8" fill="#8B4513"/>
+                            <path d="M20 10L28 18L20 26L12 18L20 10Z" fill="#F4E4C1"/>
+                        </svg>
+                        <span class="header__brand">Nomad Trails</span>
+                    </a>
+                </div>
+                
+                <div class="checkout-steps">
+                    <div class="step active" data-step="1">
+                        <span class="step-number">1</span>
+                        <span class="step-label" data-i18n="checkout.destinationAndDates">Destino y Fechas</span>
+                    </div>
+                    <div class="step" data-step="2">
+                        <span class="step-number">2</span>
+                        <span class="step-label" data-i18n="checkout.passengers">Pasajeros</span>
+                    </div>
+                    <div class="step" data-step="3">
+                        <span class="step-number">3</span>
+                        <span class="step-label" data-i18n="checkout.pet">Mascota</span>
+                    </div>
+                    <div class="step" data-step="4">
+                        <span class="step-number">4</span>
+                        <span class="step-label" data-i18n="checkout.preferences">Preferencias</span>
+                    </div>
+                    <div class="step" data-step="5">
+                        <span class="step-number">5</span>
+                        <span class="step-label" data-i18n="checkout.payment">Pago</span>
+                    </div>
+                </div>
+                
+                <button class="btn-secondary" data-i18n="checkout.back" onclick="window.history.back()">← Volver</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Checkout Content -->
+    <main class="checkout-main">
+        <div class="container">
+            <div class="checkout-grid">
+                <!-- Left Column - Forms -->
+                <div class="checkout-forms">
+                    <!-- Step 1: Destino y Fechas -->
+                    <div class="checkout-step active" id="step-1">
+                        <h2 class="section-title" data-i18n="checkout.destinationAndDates">Destino y fechas</h2>
+                        
+                        <form id="destination-dates-form" class="checkout-form">
+                            <div class="form-group">
+                                <label for="destination-display" data-i18n="checkout.destination">Destino</label>
+                                <input type="text" id="destination-display" readonly disabled>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="check-in" data-i18n="checkout.departureDate">Fecha de salida</label>
+                                <input type="date" id="check-in" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="check-out" data-i18n="checkout.returnDate">Fecha de regreso</label>
+                                <input type="date" id="check-out" required>
+                            </div>
+                            
+                            <button type="submit" class="btn-primary btn-full" data-i18n="checkout.continue">Continuar →</button>
+                        </form>
+                    </div>
+
+                    <!-- Step 2: Pasajeros -->
+                    <div class="checkout-step" id="step-2">
+                        <h2 class="section-title" data-i18n="checkout.passengers">Pasajeros</h2>
+                        
+                        <form id="passengers-form" class="checkout-form">
+                            <div class="form-group">
+                                <label for="travelers" data-i18n="checkout.passengers_number">Número de viajeros</label>
+                                <input type="number" id="travelers" min="1" max="10" value="1" required>
+                            </div>
+                            
+                            <div class="button-group">
+                                <button type="button" class="btn-secondary" data-i18n="checkout.back" onclick="previousStep()">← Atrás</button>
+                                <button type="submit" class="btn-primary" data-i18n="checkout.continue">Continuar →</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Step 3: Mascota -->
+                    <div class="checkout-step" id="step-3">
+                        <h2 class="section-title" data-i18n="checkout.pet">Mascota</h2>
+                        
+                        <form id="pet-form" class="checkout-form">
+                            <div class="form-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="has-pet">
+                                    <span data-i18n="checkout.pet_checkbox">Viajaré con mascota</span>
+                                </label>
+                            </div>
+                            
+                            <div id="pet-details" style="display: none;">
+                                <div class="form-group">
+                                    <label for="pet-type" data-i18n="checkout.pet_type">Tipo de mascota</label>
+                                    <select id="pet-type">
+                                        <option value="" data-i18n="checkout.pet_type_select">Selecciona...</option>
+                                        <option value="dog" data-i18n="checkout.pet_type_dog">Perro</option>
+                                        <option value="cat" data-i18n="checkout.pet_type_cat">Gato</option>
+                                        <option value="other" data-i18n="checkout.pet_type_other">Otro</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="pet-weight" data-i18n="checkout.pet_weight">Peso aproximado (kg)</label>
+                                    <input type="number" id="pet-weight" min="1" max="50" placeholder="5">
+                                </div>
+                            </div>
+                            
+                            <div class="button-group">
+                                <button type="button" class="btn-secondary" data-i18n="checkout.back" onclick="previousStep()">← Atrás</button>
+                                <button type="submit" class="btn-primary" data-i18n="checkout.continue">Continuar →</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Step 4: Preferencias -->
+                    <div class="checkout-step" id="step-4">
+                        <h2 class="section-title" data-i18n="checkout.preferences">Preferencias</h2>
+                        
+                        <form id="preferences-form" class="checkout-form">
+                            <div class="form-group">
+                                <label for="accommodation" data-i18n="checkout.accommodation">Tipo de alojamiento</label>
+                                <select id="accommodation" required>
+                                    <option value="" data-i18n="checkout.accommodation_select">Selecciona...</option>
+                                    <option value="hostel" data-i18n="checkout.accommodation_hostel">Hostel (Económico)</option>
+                                    <option value="hotel-3" data-i18n="checkout.accommodation_hotel_3">Hotel 3★ (Estándar)</option>
+                                    <option value="hotel-4" selected data-i18n="checkout.accommodation_hotel_4">Hotel 4★ (Confort)</option>
+                                    <option value="hotel-5" data-i18n="checkout.accommodation_hotel_5">Hotel 5★ (Lujo)</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="special-requests" data-i18n="checkout.special_requests">Solicitudes especiales</label>
+                                <textarea id="special-requests" rows="3" placeholder="Dieta, accesibilidad, preferencias..." data-i18n-placeholder="checkout.special_requests_placeholder"></textarea>
+                            </div>
+                            
+                            <div class="button-group">
+                                <button type="button" class="btn-secondary" data-i18n="checkout.back" onclick="previousStep()">← Atrás</button>
+                                <button type="submit" class="btn-primary" data-i18n="checkout.continue">Continuar →</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Step 5: Pago -->
+                    <div class="checkout-step" id="step-5">
+                        <h2 class="section-title" data-i18n="checkout.payment">Pago</h2>
+                        
+                        <form id="payment-form" class="checkout-form">
+                            <div class="form-group">
+                                <label for="card-name" data-i18n="checkout.card_name">Nombre en la tarjeta</label>
+                                <input type="text" id="card-name" data-i18n-placeholder="checkout.card_name_placeholder" required placeholder="Nombre Apellido">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="card-number" data-i18n="checkout.card_number">Número de tarjeta</label>
+                                <input type="text" id="card-number" required placeholder="1234 5678 9012 3456" maxlength="19">
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="card-expiry" data-i18n="checkout.card_expiry">Fecha de expiración</label>
+                                    <input type="text" id="card-expiry" data-i18n-placeholder="checkout.card_expiry_placeholder" required placeholder="MM/AA" maxlength="5">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="card-cvv">CVV</label>
+                                    <input type="text" id="card-cvv" required placeholder="123" maxlength="4">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="save-card">
+                                    <span data-i18n="checkout.save_card">Guardar tarjeta para futuras reservas</span>
+                                </label>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="accept-terms" required>
+                                    <span data-i18n="checkout.accept_terms">Acepto los</span><a href="#" target="_blank" data-i18n="checkout.terms_and_conditions">términos y condiciones</a>
+                                </label>
+                            </div>
+                            
+                            <div class="button-group">
+                                <button type="button" class="btn-secondary" data-i18n="checkout.back" onclick="previousStep()">← Atrás</button>
+                                <button type="submit" class="btn-primary" data-i18n="checkout.confirm_payment">Confirmar Pago →</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Step 6: Confirmación -->
+                    <div class="checkout-step" id="step-6">
+                        <div class="confirmation-content">
+                            <div class="confirmation-icon">✓</div>
+                            <h2 class="confirmation-title">¡Reserva Confirmada!</h2>
+                            <p class="confirmation-text">Tu reserva ha sido procesada correctamente.</p>
+                            <p class="confirmation-booking-id">ID de Reserva: <strong id="booking-id">-</strong></p>
+                            
+                            <div class="confirmation-actions">
+                                <button class="btn-primary" onclick="window.location.href='reserva-detalle.html?id=' + document.getElementById('booking-id').textContent">Ver Detalles</button>
+                                <button class="btn-secondary" onclick="window.location.href='reservas.html'">Mis Reservas</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column - Summary -->
+                <div class="checkout-summary">
+                    <div class="summary-card">
+                        <h3 class="summary-title" data-i18n="checkout.summary">Resumen de Reserva</h3>
+                        
+                        <div class="summary-destination" id="summary-destination">
+                            <div class="summary-image" id="summary-image"></div>
+                            <div class="summary-info">
+                                <h4 id="destination-name" data-i18n="common.loading">Cargando...</h4>
+                                <p id="destination-location">-</p>
+                            </div>
+                        </div>
+                        
+                        <div class="summary-details" id="summary-details">
+                            <div class="detail-row">
+                                <span data-i18n="checkout.departureDate">Fecha salida:</span>
+                                <span id="summary-checkin">-</span>
+                            </div>
+                            <div class="detail-row">
+                                <span data-i18n="checkout.returnDate">Fecha regreso:</span>
+                                <span id="summary-checkout">-</span>
+                            </div>
+                            <div class="detail-row">
+                                <span data-i18n="checkout.passengers">Viajeros:</span>
+                                <span id="summary-travelers">1</span>
+                            </div>
+                            <div class="detail-row">
+                                <span data-i18n="checkout.pet">Mascota:</span>
+                                <span id="summary-pet">No</span>
+                            </div>
+                            <div class="detail-row">
+                                <span data-i18n="checkout.accommodation">Alojamiento:</span>
+                                <span id="summary-accommodation">Hotel 4★</span>
+                            </div>
+                        </div>
+                        
+                        <div class="summary-pricing">
+                            <div class="price-row">
+                                <span>Subtotal</span>
+                                <span id="price-subtotal">€0</span>
+                            </div>
+                            <div class="price-row total">
+                                <span>Total</span>
+                                <span id="price-total">€0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script/utils.js"></script>
+    <script src="script/demo-users.js"></script>
+    <script src="script/auth.js"></script>
+    <script src="script/destinations.js"></script>
+    <script src="script/i18n.js"></script>
+    <script src="script/checkout.js"></script>
+</body>
+</html>

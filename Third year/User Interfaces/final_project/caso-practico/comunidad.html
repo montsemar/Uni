@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comunidad de Viajeros - Nomad Trails</title>
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/comunidad.css">
+    <link rel="stylesheet" href="style/auth.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <div class="header__logo">
+                    <a href="index.html" style="display: flex; align-items: center; gap: 1rem;">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <rect width="40" height="40" rx="8" fill="#8B4513"/>
+                            <path d="M20 10L28 18L20 26L12 18L20 10Z" fill="#F4E4C1"/>
+                        </svg>
+                        <span class="header__brand">Nomad Trails</span>
+                    </a>
+                </div>
+                <button class="header__menu-toggle" data-i18n-aria-label="header.openMenu" aria-label="Abrir menú" aria-expanded="false">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                </button>
+                <nav class="header__nav" aria-label="Navegación principal">
+                    <ul class="nav__list">
+                        <li><a href="explore.html" class="nav__link" data-i18n="nav.explore">🧭 Explorar</a></li>
+                        <li><a href="comunidad.html" class="nav__link nav__link--active" data-i18n="nav.community">💬 Comunidad</a></li>
+                        <li><a href="reservas.html" class="nav__link" data-i18n="nav.booking">🎫 Reservas</a></li>
+                        <li><a href="ayuda.html" class="nav__link" data-i18n="nav.help">❓ Ayuda</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header__actions">
+                    <button class="btn-lang" id="lang-toggle" data-i18n-aria-label="header.changeLanguage" aria-label="Cambiar idioma">
+                        <span class="lang-icon">🌐</span>
+                        <span class="lang-text" data-i18n="lang.current">ES</span>
+                    </button>
+                    <a href="perfil.html#favorites" class="btn-icon" id="favorites-link" data-i18n-aria-label="header.favorites" aria-label="Ver favoritos">
+                        <span class="icon-heart">🤍</span>
+                        <span class="favorites-count" id="favorites-count">0</span>
+                    </a>
+                    <button class="btn-primary" id="user-session" data-i18n="header.login">Iniciar Sesión</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="page-header">
+                <div class="page-header__content">
+                    <h1 class="page-header__title" data-i18n="community.title">Comunidad de Viajeros</h1>
+                    <p class="page-header__subtitle" data-i18n="community.subtitle">Comparte tus experiencias y conecta con otros viajeros</p>
+                </div>
+                <button class="btn btn--primary" id="create-post-btn" data-i18n="community.shareExperience">
+                    ✏️ Crear publicación
+                </button>
+            </div>
+
+            <!-- Filters -->
+            <div class="community-filters">
+                <div class="filter-group">
+                    <label for="filter-destination" class="filter-label" data-i18n="community.filterByDestination">Filtrar por destino:</label>
+                    <select id="filter-destination" class="filter-select">
+                        <option value="all" data-i18n="community.allDestinations">Todos los destinos</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="filter-sort" class="filter-label" data-i18n="explore.sortBy">Ordenar por:</label>
+                    <select id="filter-sort" class="filter-select">
+                        <option value="recent" data-i18n="community.mostRecent">Más recientes</option>
+                        <option value="popular" data-i18n="community.mostPopular">Más populares</option>
+                        <option value="rating" data-i18n="community.bestRated">Mejor valorados</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Posts Feed -->
+            <div class="posts-feed" id="posts-feed">
+                <!-- Posts will be dynamically loaded here -->
+            </div>
+
+            <!-- Loading State -->
+            <div class="loading-state" id="loading-state" hidden>
+                <div class="spinner"></div>
+                <p data-i18n="community.loading">Cargando publicaciones...</p>
+            </div>
+
+            <!-- Empty State -->
+            <div class="empty-state" id="empty-state" hidden>
+                <div class="empty-state__icon">📝</div>
+                <h3 class="empty-state__title" data-i18n="community.noPostsYet">No hay publicaciones</h3>
+                <p class="empty-state__text" data-i18n="community.beFirst">Sé el primero en compartir tu experiencia</p>
+                <button class="btn btn--primary" onclick="document.getElementById('create-post-btn').click()" data-i18n="community.shareExperience">
+                    Crear publicación
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Create Post Modal -->
+    <div class="modal" id="create-post-modal" hidden>
+        <div class="modal__overlay"></div>
+        <div class="modal__content">
+            <div class="modal__header">
+                <h2 class="modal__title" data-i18n="community.newPost">Nueva Publicación</h2>
+                <button class="modal__close" id="close-modal-btn" aria-label="Cerrar">✕</button>
+            </div>
+            <div class="modal__body">
+                <form id="create-post-form" class="post-form">
+                    <div class="form-group">
+                        <label for="post-destination" class="form-label" data-i18n="community.destinationLabel">Destino</label>
+                        <select id="post-destination" class="form-input" required>
+                            <option value="" data-i18n="community.destinationPlaceholder">Selecciona un destino</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-label" data-i18n="community.ratingLabel">Valoración</div>
+                        <div class="rating-input" id="post-rating-input">
+                            <button type="button" class="rating-star" data-rating="1">☆</button>
+                            <button type="button" class="rating-star" data-rating="2">☆</button>
+                            <button type="button" class="rating-star" data-rating="3">☆</button>
+                            <button type="button" class="rating-star" data-rating="4">☆</button>
+                            <button type="button" class="rating-star" data-rating="5">☆</button>
+                        </div>
+                        <input type="hidden" id="post-rating" name="rating" value="0">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="post-description" class="form-label" data-i18n="community.descriptionLabel">Descripción</label>
+                        <textarea 
+                            id="post-description" 
+                            class="form-input form-textarea" 
+                            rows="4" 
+                            placeholder="Comparte tu experiencia..."
+                            required
+                            maxlength="500"
+                            data-i18n-placeholder="community.descriptionPlaceholder"
+                        ></textarea>
+                        <small class="form-hint"><span id="char-count">0</span>/500 <span data-i18n="community.characters">caracteres</span></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="post-image" class="form-label" data-i18n="community.imageLabel">Imagen (opcional)</label>
+                        <input type="url" id="post-image" class="form-input" placeholder="URL de la imagen" data-i18n-placeholder="community.imagePlaceholder">
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn btn--secondary" id="cancel-post-btn" data-i18n="community.cancel">Cancelar</button>
+                        <button type="submit" class="btn btn--primary" data-i18n="community.publish">Publicar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__content">
+                <div class="footer__section footer__brand">
+                    <div class="footer__logo">
+                        <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="40" height="40" rx="8" fill="#8B4513"/>
+                            <path d="M20 10L28 18L20 26L12 18L20 10Z" fill="#F4E4C1"/>
+                        </svg>
+                        <span>Nomad Trails</span>
+                    </div>
+                    <p class="footer__tagline" data-i18n="footer.tagline">Tu compañero de viajes auténticos</p>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__title" data-i18n="footer.links">Enlaces</h4>
+                    <ul class="footer__links">
+                        <li class="footer__link"><a href="explore.html" data-i18n="footer.explore">Explorar</a></li>
+                        <li class="footer__link"><a href="comunidad.html" data-i18n="footer.community">Comunidad</a></li>
+                        <li class="footer__link"><a href="reservas.html" data-i18n="footer.bookings">Reservas</a></li>
+                        <li class="footer__link"><a href="ayuda.html" data-i18n="footer.help">Ayuda</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__title" data-i18n="footer.legal">Legal</h4>
+                    <ul class="footer__links">
+                        <li class="footer__link"><a href="#privacidad" data-i18n="footer.privacy">Privacidad</a></li>
+                        <li class="footer__link"><a href="#terminos" data-i18n="footer.terms">Términos</a></li>
+                        <li class="footer__link"><a href="#cookies" data-i18n="footer.cookies">Cookies</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__title" data-i18n="footer.contact">Contacto</h4>
+                    <div class="footer__contact-item">
+                        <span>📧</span>
+                        <a href="mailto:soporte@nomadtrails.com">soporte@nomadtrails.com</a>
+                    </div>
+                    <div class="footer__contact-item">
+                        <span>📞</span>
+                        <a href="tel:+34900123456">+34 900 123 456</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p class="footer__text" data-i18n="footer.rights">&copy; 2025 Nomad Trails. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="script/utils.js"></script>
+    <script src="script/destinations.js"></script>
+    <script src="script/demo-users.js"></script>
+    <script src="script/auth.js"></script>
+    <script src="script/favorites.js"></script>
+    <script src="script/reviews.js"></script>
+    <script src="script/i18n.js"></script>
+    <script src="script/comunidad.js"></script>
+    <script src="script/main.js"></script>
+</body>
+</html>

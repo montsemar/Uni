@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explora destinos en el mapa interactivo - Nomad Trails">
+    <title>Explorar Destinos - Nomad Trails</title>
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/explore.css">
+    <link rel="stylesheet" href="style/auth.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <div class="header__logo">
+                    <a href="index.html" style="display: flex; align-items: center; gap: 1rem;">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <rect width="40" height="40" rx="8" fill="#8B4513"/>
+                            <path d="M20 10L28 18L20 26L12 18L20 10Z" fill="#F4E4C1"/>
+                        </svg>
+                        <span class="header__brand">Nomad Trails</span>
+                    </a>
+                </div>
+                <button class="header__menu-toggle" data-i18n-aria-label="header.openMenu" aria-label="Abrir menú" aria-expanded="false">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                </button>
+                <nav class="header__nav" aria-label="Navegación principal"> 
+                    <ul class="nav__list">
+                        <li><a href="explore.html" class="nav__link" data-i18n="nav.explore">🧭 Explorar</a></li>
+                        <li><a href="comunidad.html" class="nav__link" data-i18n="nav.community">💬 Comunidad</a></li>
+                        <li><a href="reservas.html" class="nav__link" data-i18n="nav.booking">🎫 Reservas</a></li>
+                        <li><a href="ayuda.html" class="nav__link" data-i18n="nav.help">❓ Ayuda</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header__actions">
+                    <button class="btn-lang" id="lang-toggle" data-i18n-aria-label="header.changeLanguage" aria-label="Cambiar idioma">
+                        <span class="lang-icon">🌐</span>
+                        <span class="lang-text" data-i18n="lang.current">ES</span>
+                    </button>
+                    <a href="perfil.html#favorites" class="btn-icon" id="favorites-link" data-i18n-aria-label="header.favorites" aria-label="Ver favoritos">
+                        <span class="icon-heart">🤍</span>
+                        <span class="favorites-count" id="favorites-count">0</span>
+                    </a>
+                    <button class="btn-primary" id="user-session" data-i18n="header.login">Iniciar Sesión</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="explore-hero">
+        <div class="container">
+            <h1 class="explore-hero__title" data-i18n="explore.title">Explorar Destinos</h1>
+            <p class="explore-hero__subtitle" data-i18n="explore.subtitle">Descubre lugares increíbles en el mapa interactivo</p>
+            
+            <div class="explore-search">
+                <label for="explore-search-input" class="sr-only" data-i18n="search.label">Buscar destino</label>
+                <div class="search-box__input-wrapper">
+                    <span class="search-box__icon" aria-hidden="true">🔍</span>
+                    <input 
+                        type="text" 
+                        id="explore-search-input" 
+                        class="search-box__input" 
+                        placeholder="Buscar en el mapa..."
+                        data-i18n-placeholder="explore.searchPlaceholder"
+                        autocomplete="off"
+                    >
+                </div>
+            </div>
+            
+            <div class="explore-filters">
+                <button class="view-toggle view-toggle--active" data-view="map" title="Vista de mapa">
+                    🗺️ <span data-i18n="explore.mapView">Mapa</span>
+                </button>
+                <button class="view-toggle" data-view="grid" title="Vista de cuadrícula">
+                    ⊞ <span data-i18n="explore.gridView">Lista</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main explore-main">
+        <div class="container">
+            <!-- Map View -->
+            <section class="map-section" id="map-view">
+                <div class="map-container">
+                    <!-- Map Background Image -->
+                    <img src="images/mapamundi.jpg" alt="Mapa del mundo" class="map-background-image" id="map-bg">
+                    
+                    <!-- SVG Overlay for Points -->
+                    <svg class="map-overlay" id="map-overlay" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid meet">
+                        <defs>
+                            <filter id="glow">
+                                <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                                <feMerge>
+                                    <feMergeNode in="coloredBlur"/>
+                                    <feMergeNode in="SourceGraphic"/>
+                                </feMerge>
+                            </filter>
+                            <filter id="shadow">
+                                <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.5"/>
+                            </filter>
+                        </defs>
+                        
+                        <!-- City Points (will be populated by JS) -->
+                        <g id="city-points">
+                        </g>
+                        
+                        <!-- Zoom Controls -->
+                        <g id="zoom-controls" transform="translate(880, 400)">
+                            <rect x="0" y="0" width="40" height="80" rx="8" fill="white" opacity="0.95" stroke="#8D6E63" stroke-width="2" filter="url(#shadow)"/>
+                            <g id="zoom-in" class="zoom-btn" transform="translate(20, 20)" style="cursor: pointer;">
+                                <circle r="14" fill="#D2691E" opacity="0"/>
+                                <text text-anchor="middle" y="6" font-size="24" font-weight="bold" fill="#3E2723">+</text>
+                            </g>
+                            <line x1="8" y1="40" x2="32" y2="40" stroke="#8D6E63" stroke-width="1.5"/>
+                            <g id="zoom-out" class="zoom-btn" transform="translate(20, 60)" style="cursor: pointer;">
+                                <circle r="14" fill="#D2691E" opacity="0"/>
+                                <text text-anchor="middle" y="6" font-size="24" font-weight="bold" fill="#3E2723">−</text>
+                            </g>
+                        </g>
+                    </svg>
+                    
+                    <!-- Map Legend -->
+                    <div class="map-legend">
+                        <h3 class="map-legend__title" data-i18n="explore.legend">Leyenda</h3>
+                        <ul class="map-legend__items">
+                            <li><span class="legend-dot legend-dot--available"></span> <span data-i18n="explore.available">Disponible</span></li>
+                            <li><span class="legend-dot legend-dot--selected"></span> <span data-i18n="explore.selected">Seleccionado</span></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Map Info Panel -->
+                <div class="map-info" id="map-info" hidden>
+                    <button class="map-info__close" id="close-map-info" data-i18n-aria-label="explore.close" aria-label="Cerrar">✕</button>
+                    <div class="map-info__content">
+                        <img src="https://ejemplo.com/imagen.jpg" alt="" class="map-info__image" id="map-info-image">
+                        <h3 class="map-info__title" id="map-info-title">Nombre del Destino</h3>
+                        <p class="map-info__location" id="map-info-location">📍 País, Continente</p>
+                        <p class="map-info__description" id="map-info-description">Descripción del destino...</p>
+                        <div class="map-info__actions" style="display: flex; gap: 8px; align-items: center; margin-top: 12px;">
+                            <button class="btn-icon-round" id="map-info-favorite" aria-label="Agregar a favoritos" title="Agregar a favoritos">
+                                🤍
+                            </button>
+                            <span class="map-info__price" id="map-info-price">$1200</span>
+                        </div>
+                        <div class="map-info__footer">
+                            <button class="btn-primary btn-primary--small" id="map-info-view">
+                                <span data-i18n="explore.viewDetails">Ver detalles</span> →
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Grid View -->
+            <div class="grid-section" id="grid-view" hidden>
+                <div class="explore-controls">
+                    <div class="continent-filters">
+                        <button class="continent-btn continent-btn--active" data-continent="all">
+                            🌍 <span data-i18n="explore.continents.all">Todos</span>
+                        </button>
+                        <button class="continent-btn" data-continent="Europa">
+                            🏰 <span data-i18n="explore.continents.europe">Europa</span>
+                        </button>
+                        <button class="continent-btn" data-continent="Asia">
+                            🏯 <span data-i18n="explore.continents.asia">Asia</span>
+                        </button>
+                        <button class="continent-btn" data-continent="América del Norte">
+                            🗽 <span data-i18n="explore.continents.northAmerica">Norteamérica</span>
+                        </button>
+                        <button class="continent-btn" data-continent="América del Sur">
+                            🌎 <span data-i18n="explore.continents.southAmerica">Sudamérica</span>
+                        </button>
+                        <button class="continent-btn" data-continent="África">
+                            🦁 <span data-i18n="explore.continents.africa">África</span>
+                        </button>
+                        <button class="continent-btn" data-continent="Oceanía">
+                            🏝️ <span data-i18n="explore.continents.oceania">Oceanía</span>
+                        </button>
+                    </div>
+                    
+                    <div class="sort-control">
+                        <label for="explore-sort" class="sort-label" data-i18n="explore.sortBy">Ordenar:</label>
+                        <select id="explore-sort" class="sort-select">
+                            <option value="name" data-i18n="results.name">Nombre A-Z</option>
+                            <option value="price-asc" data-i18n="results.priceLowHigh">Precio: Menor a Mayor</option>
+                            <option value="price-desc" data-i18n="results.priceHighLow">Precio: Mayor a Menor</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="destinations-count">
+                    <span id="destinations-count">0 destinos</span>
+                </div>
+                
+                <div class="destinations-grid" id="explore-grid">
+                    <!-- Skeleton loaders -->
+                    <div class="destination-card skeleton">
+                        <div class="skeleton-image"></div>
+                        <div class="skeleton-content">
+                            <div class="skeleton-text"></div>
+                            <div class="skeleton-text skeleton-text--short"></div>
+                        </div>
+                    </div>
+                    <div class="destination-card skeleton">
+                        <div class="skeleton-image"></div>
+                        <div class="skeleton-content">
+                            <div class="skeleton-text"></div>
+                            <div class="skeleton-text skeleton-text--short"></div>
+                        </div>
+                    </div>
+                    <div class="destination-card skeleton">
+                        <div class="skeleton-image"></div>
+                        <div class="skeleton-content">
+                            <div class="skeleton-text"></div>
+                            <div class="skeleton-text skeleton-text--short"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__content">
+                <div class="footer__section footer__brand">
+                    <div class="footer__logo">
+                        <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="40" height="40" rx="8" fill="#8B4513"/>
+                            <path d="M20 10L28 18L20 26L12 18L20 10Z" fill="#F4E4C1"/>
+                        </svg>
+                        <span>Nomad Trails</span>
+                    </div>
+                    <p class="footer__tagline" data-i18n="footer.tagline">Tu compañero de viajes auténticos</p>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__title" data-i18n="footer.links">Enlaces</h4>
+                    <ul class="footer__links">
+                        <li class="footer__link"><a href="explore.html" data-i18n="footer.explore">Explorar</a></li>
+                        <li class="footer__link"><a href="comunidad.html" data-i18n="footer.community">Comunidad</a></li>
+                        <li class="footer__link"><a href="reservas.html" data-i18n="footer.bookings">Reservas</a></li>
+                        <li class="footer__link"><a href="ayuda.html" data-i18n="footer.help">Ayuda</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__title" data-i18n="footer.legal">Legal</h4>
+                    <ul class="footer__links">
+                        <li class="footer__link"><a href="#privacidad" data-i18n="footer.privacy">Privacidad</a></li>
+                        <li class="footer__link"><a href="#terminos" data-i18n="footer.terms">Términos</a></li>
+                        <li class="footer__link"><a href="#cookies" data-i18n="footer.cookies">Cookies</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__title" data-i18n="footer.contact">Contacto</h4>
+                    <div class="footer__contact-item">
+                        <span>📧</span>
+                        <a href="mailto:soporte@nomadtrails.com">soporte@nomadtrails.com</a>
+                    </div>
+                    <div class="footer__contact-item">
+                        <span>📞</span>
+                        <a href="tel:+34900123456">+34 900 123 456</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p class="footer__text" data-i18n="footer.rights">&copy; 2025 Nomad Trails. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="script/demo-users.js"></script>
+    <script src="script/auth.js"></script>
+    <script src="script/utils.js"></script>
+    <script src="script/i18n.js"></script>
+    <script src="script/destinations.js"></script>
+    <script src="script/favorites.js"></script>
+    <script src="script/chat.js"></script>
+    <script src="script/explore.js"></script>
+    <script src="script/main.js"></script>
+</body>
+</html>

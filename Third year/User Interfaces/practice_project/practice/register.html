@@ -1,0 +1,129 @@
+<!--HTML Pagina de Registro-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Mochileros Sin Fronteras</title>
+    <link rel="stylesheet" href="style/styles_registro.css">
+    <link rel="stylesheet" href="style/styles-modal.css">
+</head>
+<body>
+    <header>
+        <h1>Mochileros Sin Fronteras</h1>
+        
+        <nav class="menu">
+            <a href="home_a.html">Inicio</a>
+            <a href="m">Experiencias</a>
+            <a href="m">Consejos</a>
+            <a href="m">Foro</a>
+            <a href="m">Contacto</a>
+        </nav>
+        
+        <div class="header-right">
+            <img src="images/backpack_logo.png" alt="Logo Mochileros Sin Fronteras: Una mochila de color marrón">
+            <select>
+                <option>ES</option>
+                <option>EN</option>
+            </select>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="register-header">
+                <h2>Únete a la Comunidad Mochilera</h2>
+                <p>Crea tu cuenta y comienza a compartir tus aventuras</p>
+            </div>
+
+            <form class="register-form">
+                <div class="form-row">
+                        <div class="form-group">
+                            <label for="nombre">Nombre *</label>
+                            <input type="text" id="nombre" name="nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="apellidos">Apellidos *</label>
+                            <input type="text" id="apellidos" name="apellidos" required>
+                        </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Correo electrónico *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm-email">Confirmar correo electrónico *</label>
+                        <input type="email" id="confirm-email" name="confirm-email" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="login">Nombre de usuario *</label>
+                        <input type="text" id="login" name="login" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Contraseña *</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="birthdate">Fecha de nacimiento *</label>
+                    <input type="date" id="birthdate" name="birthdate" required>
+                </div>
+
+                <div class="form-group profile-image">
+                    <label for="profile-pic">Subir imagen de perfil *</label>
+                    <div class="file-input-container">
+                        <input type="file" id="profile-pic" name="profile-pic" accept="image/webp,image/png,image/jpeg" required>
+                        <label for="profile-pic" class="file-input-label">
+                            <span class="file-icon">📷</span>
+                            <span class="file-text">Seleccionar imagen</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="privacy-policy" name="privacy-policy" required>
+                        <span class="checkbox-text">
+                            Acepto la <a href="#" class="policy-link">política de privacidad</a> *
+                        </span>
+                    </label>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="register-submit">Guardar datos y acceder</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <p>© 2025 Mochileros Sin Fronteras</p>
+                <p><a href="m">Sobre Nosotros</a> <a href="m">Política de Privacidad</a> <a href="m">Ayuda</a></p>
+            </div>
+            <div class="newsletter-signup">
+                <h4>🌍 Únete al Newsletter</h4>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Tu email para aventuras..." required>
+                    <button type="submit">Suscribirse</button>
+                </form>
+            </div>
+            <div class="footer-social">
+                <a href="m"><img class="rrss" src="images/youtube.png" alt="Logo de YouTube con un enlace"></a>
+                <a href="m"><img class="rrss" src="images/instagram.png" alt="Logo de Instagram con un enlace"></a>
+                <a href="m"><img class="rrss" src="images/twitter.png" alt="Logo de Twitter o X con un enlace"></a>
+            </div>
+        </div>
+    </footer>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="script/modal.js"></script>
+	<script src="script/validacion-registro.js"></script>
+	<script src="script/registro.js"></script>
+</body>
+</html>

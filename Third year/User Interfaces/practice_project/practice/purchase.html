@@ -1,0 +1,166 @@
+<!--HTML Pagina de Compra-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprar Pack - Mochileros Sin Fronteras</title>
+    <link rel="stylesheet" href="style/styles_compras.css">
+    <link rel="stylesheet" href="style/styles-modal.css">
+</head>
+<body>
+    <header>
+        <h1>Mochileros Sin Fronteras</h1>
+        
+        <nav class="menu">
+            <a href="home_a.html">Inicio</a>
+            <a href="m">Experiencias</a>
+            <a href="m">Consejos</a>
+            <a href="m">Foro</a>
+            <a href="m">Contacto</a>
+        </nav>
+        
+        <div class="header-right">
+            <img src="images/backpack_logo.png" alt="Logo Mochileros Sin Fronteras: Una mochila de color marrón">
+            <select>
+                <option>ES</option>
+                <option>EN</option>
+            </select>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- Contenedor izquierdo: Pack de viaje -->
+            <div class="pack-details">
+                <div class="pack-image">
+                    <img src="images/vietnam.jpg" alt="Imagen representativa del Pack Sudeste Asiático: Vista panorámica de la bahía de Ha Long en Vietnam">
+                </div>
+                <div class="pack-info">
+                    <h2>Pack Sudeste Asiático</h2>
+                    <div class="pack-price">600€</div>
+                    <div class="pack-description">
+                        <h3>Incluye:</h3>
+                        <ul>
+                            <li>🚌 Transporte en buses locales</li>
+                            <li>🏨 Hostales seleccionados (7 noches)</li>
+                            <li>📋 Guía completa de visados</li>
+                            <li>🗺️ Mapas offline de Vietnam y Camboya</li>
+                            <li>📱 App móvil con itinerario</li>
+                            <li>🆘 Soporte 24/7 durante el viaje</li>
+                        </ul>
+                        <div class="pack-highlights">
+                            <h4>Destinos incluidos:</h4>
+                            <p>Ho Chi Minh • Phnom Penh • Siem Reap • Hanoi</p>
+                        </div>
+                        <div class="pack-duration">
+                            <strong>Duración:</strong> 14 días / 13 noches
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contenedor derecho: Formulario de compra -->
+            <div class="form-container">
+                <div class="form-header">
+                    <h2>Finalizar Compra</h2>
+                    <p>Completa tus datos para proceder con el pago</p>
+                </div>
+
+                <form class="purchase-form">
+                    <div class="form-section">
+                        <h3>Datos del comprador</h3>
+                        <div class="form-group">
+                            <label for="buyer-name">Nombre completo *</label>
+                            <input type="text" id="buyer-name" name="buyer-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="buyer-email">Correo electrónico *</label>
+                            <input type="email" id="buyer-email" name="buyer-email" required>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Datos de pago</h3>
+                        <div class="form-group">
+                            <label for="card-type">Tipo de tarjeta *</label>
+                            <select id="card-type" name="card-type" required>
+                                <option value="">Seleccionar tipo de tarjeta</option>
+                                <option value="visa">Visa</option>
+                                <option value="mastercard">Mastercard</option>
+                                <option value="amex">American Express</option>
+                                <option value="maestro">Maestro</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="card-number">Número de tarjeta *</label>
+                            <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456" required maxlength="19">
+                        </div>
+                        <div class="form-group">
+                            <label for="card-holder">Nombre del titular *</label>
+                            <input type="text" id="card-holder" name="card-holder" placeholder="Nombre como aparece en la tarjeta" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="expiry-date">Fecha de caducidad *</label>
+                                <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/AA" required maxlength="5">
+                            </div>
+                            <div class="form-group">
+                                <label for="cvv">CVV *</label>
+                                <input type="text" id="cvv" name="cvv" placeholder="123" required maxlength="4">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="purchase-summary">
+                        <div class="summary-item">
+                            <span>Pack Sudeste Asiático</span>
+                            <span>600€</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Gastos de gestión</span>
+                            <span>15€</span>
+                        </div>
+                        <hr>
+                        <div class="summary-total">
+                            <span>Total</span>
+                            <span>615€</span>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="purchase-btn">💳 Comprar ahora</button>
+                        <button type="reset" class="clear-btn">🗑️ Borrar datos</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <p>© 2025 Mochileros Sin Fronteras</p>
+                <p><a href="m">Sobre Nosotros</a> <a href="m">Política de Privacidad</a> <a href="m">Ayuda</a></p>
+            </div>
+            <div class="newsletter-signup">
+                <h4>🌍 Únete al Newsletter</h4>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Tu email para aventuras..." required>
+                    <button type="submit">Suscribirse</button>
+                </form>
+            </div>
+            <div class="footer-social">
+                <a href="m"><img class="rrss" src="images/youtube.png" alt="Logo de YouTube con un enlace"></a>
+                <a href="m"><img class="rrss" src="images/instagram.png" alt="Logo de Instagram con un enlace"></a>
+                <a href="m"><img class="rrss" src="images/twitter.png" alt="Logo de Twitter o X con un enlace"></a>
+            </div>
+        </div>
+    </footer>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="script/modal.js"></script>
+	<script src="script/pack-loader.js"></script>
+	<script src="script/validacion-compra.js"></script>
+    <script src="script/compra.js"></script>
+</body>
+</html>

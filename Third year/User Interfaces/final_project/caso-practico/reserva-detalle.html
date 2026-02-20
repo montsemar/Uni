@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle de Reserva - Nomad Trails</title>
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/booking-detail.css">
+    <link rel="stylesheet" href="style/auth.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <div class="header__logo">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <rect width="40" height="40" rx="8" fill="#8B4513"/>
+                        <path d="M20 10L28 18L20 26L12 18L20 10Z" fill="#F4E4C1"/>
+                    </svg>
+                    <span class="header__brand">Nomad Trails</span>
+                </div>
+                <button class="header__menu-toggle" data-i18n-aria-label="header.openMenu" aria-label="Abrir menú" aria-expanded="false">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                </button>
+                <nav class="header__nav" aria-label="Navegación principal">
+                    <ul class="nav__list">
+                        <li><a href="explore.html" class="nav__link" data-i18n="nav.explore">🧭 Explorar</a></li>
+                        <li><a href="comunidad.html" class="nav__link" data-i18n="nav.community">💬 Comunidad</a></li>
+                        <li><a href="reservas.html" class="nav__link active" data-i18n="nav.booking">🎫 Reservas</a></li>
+                        <li><a href="ayuda.html" class="nav__link" data-i18n="nav.help">❓ Ayuda</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header__actions">
+                    <button class="btn-lang" id="lang-toggle" data-i18n-aria-label="header.changeLanguage" aria-label="Cambiar idioma">
+                        <span class="lang-icon">🌐</span>
+                        <span class="lang-text" data-i18n="lang.current">ES</span>
+                    </button>
+                    <a href="perfil.html#favorites" class="btn-icon" id="favorites-link" data-i18n-aria-label="header.favorites" aria-label="Ver favoritos">
+                        <span class="icon-heart">🤍</span>
+                        <span class="favorites-count" id="favorites-count">0</span>
+                    </a>
+                    <button class="btn-primary" id="user-session" data-i18n="header.login">Iniciar Sesión</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Booking Detail -->
+    <main class="booking-detail-main">
+        <div class="container">
+            <div class="back-button">
+                <button onclick="window.location.href='reservas.html'" data-i18n="bookingDetail.backToReservations">← Volver a Mis Reservas</button>
+            </div>
+
+            <div class="booking-header" id="booking-header">
+                <div class="booking-status">
+                    <span class="status-badge" id="status-badge">Próxima</span>
+                    <h1 class="booking-title">Reserva #<span id="booking-id">-</span></h1>
+                </div>
+                <div class="booking-actions" id="booking-actions">
+                    <button class="btn-secondary" onclick="window.print()">📄 Descargar PDF</button>
+                    <button class="btn-danger" id="cancel-booking-btn">❌ Cancelar Reserva</button>
+                </div>
+            </div>
+
+            <div class="booking-content">
+                <div class="booking-main">
+                    <!-- Destination Section -->
+                    <div class="detail-section">
+                        <h2 class="section-title" data-i18n="bookingDetail.destination">Destino</h2>
+                        <div class="destination-card" id="destination-card">
+                            <div class="destination-image" id="destination-image"></div>
+                            <div class="destination-info">
+                                <h3 id="destination-name">-</h3>
+                                <p id="destination-location">-</p>
+                                <p class="destination-description" id="destination-description">-</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Travel Details Section -->
+                    <div class="detail-section">
+                        <h2 class="section-title" data-i18n="bookingDetail.travelDetails">Detalles del Viaje</h2>
+                        <div class="details-grid">
+                            <div class="detail-item">
+                                <span class="detail-label" data-i18n="bookingDetail.checkIn">Check-in</span>
+                                <span class="detail-value" id="check-in-date">-</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label" data-i18n="bookingDetail.checkOut">Check-out</span>
+                                <span class="detail-value" id="check-out-date">-</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label" data-i18n="bookingDetail.nights">Noches</span>
+                                <span class="detail-value" id="nights">-</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label" data-i18n="bookingDetail.travelers">Viajeros</span>
+                                <span class="detail-value" id="travelers">-</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label" data-i18n="bookingDetail.accommodation">Alojamiento</span>
+                                <span class="detail-value" id="accommodation">-</span>
+                            </div>
+                            <div class="detail-item" id="pet-info-section" style="display: none;">
+                                <span class="detail-label" data-i18n="bookingDetail.pet">Mascota</span>
+                                <span class="detail-value" id="pet-info">-</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label" data-i18n="bookingDetail.reservationDate">Fecha de reserva</span>
+                                <span class="detail-value" id="booking-date">-</span>
+                            </div>
+                        </div>
+                        
+                        <div class="special-requests" id="special-requests-section" style="display: none;">
+                            <h3 data-i18n="bookingDetail.specialRequests">Solicitudes Especiales</h3>
+                            <p id="special-requests-text">-</p>
+                        </div>
+                    </div>
+
+                    <!-- Itinerary Planner Section -->
+                    <div class="detail-section">
+                        <h2 class="section-title" data-i18n="bookingDetail.itineraryPlanner">📋 Planificador de Itinerario</h2>
+                        <div class="itinerary-planner">
+                            <div class="itinerary-input-group">
+                                <input type="text" id="activity-input" class="activity-input" placeholder="Añade una actividad (ej: Visitar la Torre Eiffel)" data-i18n-placeholder="bookingDetail.activityPlaceholder">
+                                <button id="add-activity-btn" class="btn-primary" data-i18n="bookingDetail.addActivity">➕ Añadir</button>
+                            </div>
+                            
+                            <div class="activities-list" id="activities-list">
+                                <!-- Activities will be added here dynamically -->
+                            </div>
+                            
+                            <div class="itinerary-empty" id="itinerary-empty">
+                                <p>📝 No hay actividades planificadas todavía</p>
+                                <small>Añade actividades para organizar tu viaje</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Payment Section -->
+                    <div class="detail-section">
+                        <h2 class="section-title" data-i18n="bookingDetail.paymentInfo">Información de Pago</h2>
+                        <div class="payment-breakdown">
+                            <div class="payment-row">
+                                <span data-i18n="bookingDetail.basePrice">Precio base</span>
+                                <span id="price-base">€0</span>
+                            </div>
+                            <div class="payment-row">
+                                <span data-i18n="bookingDetail.accommodation">Alojamiento</span>
+                                <span id="price-accommodation">€0</span>
+                            </div>
+                            <div class="payment-row">
+                                <span data-i18n="bookingDetail.feesAndServices">Tasas y servicios</span>
+                                <span id="price-fees">€0</span>
+                            </div>
+                            <div class="payment-row total">
+                                <span data-i18n="bookingDetail.totalPaid">Total Pagado</span>
+                                <span id="price-total">€0</span>
+                            </div>
+                        </div>
+                        <div class="payment-method">
+                            <span class="payment-label" data-i18n="bookingDetail.paymentMethod">Método de pago:</span>
+                            <span class="payment-value" data-i18n="bookingDetail.creditCard">💳 Tarjeta de crédito</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="booking-sidebar">
+                    <!-- Timeline -->
+                    <div class="sidebar-card">
+                        <h3 class="sidebar-title" data-i18n="bookingDetail.reservationStatus">Estado de la Reserva</h3>
+                        <div class="timeline">
+                            <div class="timeline-item completed">
+                                <div class="timeline-icon">✓</div>
+                                <div class="timeline-content">
+                                    <h4 data-i18n="bookingDetail.reservationConfirmed">Reserva Confirmada</h4>
+                                    <p id="timeline-confirmed">00</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item" id="timeline-upcoming">
+                                <div class="timeline-icon">📅</div>
+                                <div class="timeline-content">
+                                    <h4 data-i18n="bookingDetail.upcomingTrip">Viaje Próximo</h4>
+                                    <p id="timeline-travel-date">00</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-icon">🎉</div>
+                                <div class="timeline-content">
+                                    <h4 data-i18n="bookingDetail.enjoyYourTrip">Disfruta tu Viaje</h4>
+                                    <p data-i18n="bookingDetail.haveAmazingExperience">¡Que tengas una experiencia increíble!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Help Card -->
+                    <div class="sidebar-card">
+                        <h3 class="sidebar-title" data-i18n="bookingDetail.needHelp">¿Necesitas Ayuda?</h3>
+                        <p class="help-text" data-i18n="bookingDetail.contactSupport">Contacta con nuestro equipo de soporte</p>
+                        <a href="ayuda.html" class="btn-secondary btn-full" data-i18n="bookingDetail.helpCenter">Centro de Ayuda</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__content">
+                <div class="footer__section footer__brand">
+                    <div class="footer__logo">
+                        <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="40" height="40" rx="8" fill="#8B4513"/>
+                            <path d="M20 10L28 18L20 26L12 18L20 10Z" fill="#F4E4C1"/>
+                        </svg>
+                        <span>Nomad Trails</span>
+                    </div>
+                    <p class="footer__tagline" data-i18n="footer.tagline">Tu compañero de viajes auténticos</p>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__title" data-i18n="footer.links">Enlaces</h4>
+                    <ul class="footer__links">
+                        <li class="footer__link"><a href="explore.html" data-i18n="footer.explore">Explorar</a></li>
+                        <li class="footer__link"><a href="comunidad.html" data-i18n="footer.community">Comunidad</a></li>
+                        <li class="footer__link"><a href="reservas.html" data-i18n="footer.bookings">Reservas</a></li>
+                        <li class="footer__link"><a href="ayuda.html" data-i18n="footer.help">Ayuda</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__title" data-i18n="footer.legal">Legal</h4>
+                    <ul class="footer__links">
+                        <li class="footer__link"><a href="#privacidad" data-i18n="footer.privacy">Privacidad</a></li>
+                        <li class="footer__link"><a href="#terminos" data-i18n="footer.terms">Términos</a></li>
+                        <li class="footer__link"><a href="#cookies" data-i18n="footer.cookies">Cookies</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__title" data-i18n="footer.contact">Contacto</h4>
+                    <div class="footer__contact-item">
+                        <span>📧</span>
+                        <a href="mailto:soporte@nomadtrails.com">soporte@nomadtrails.com</a>
+                    </div>
+                    <div class="footer__contact-item">
+                        <span>📞</span>
+                        <a href="tel:+34900123456">+34 900 123 456</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p class="footer__text" data-i18n="footer.rights">&copy; 2025 Nomad Trails. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script/utils.js"></script>
+    <script src="script/demo-users.js"></script>
+    <script src="script/auth.js"></script>
+    <script src="script/favorites.js"></script>
+    <script src="script/i18n.js"></script>
+    <script src="script/booking-detail.js"></script>
+    <script src="script/main.js"></script>
+</body>
+</html>

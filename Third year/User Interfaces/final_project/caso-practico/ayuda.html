@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro de Soporte - Nomad Trails</title>
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/ayuda.css">
+    <link rel="stylesheet" href="style/auth.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <div class="header__logo">
+                    <a href="index.html" style="display: flex; align-items: center; gap: 1rem;">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <rect width="40" height="40" rx="8" fill="#8B4513"/>
+                            <path d="M20 10L28 18L20 26L12 18L20 10Z" fill="#F4E4C1"/>
+                        </svg>
+                        <span class="header__brand">Nomad Trails</span>
+                    </a>
+                </div>
+                <button class="header__menu-toggle" data-i18n-aria-label="header.openMenu" aria-label="Abrir menú" aria-expanded="false">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                </button>
+                <nav class="header__nav" aria-label="Navegación principal">    
+                    <ul class="nav__list">
+                        <li><a href="explore.html" class="nav__link" data-i18n="nav.explore">🧭 Explorar</a></li>
+                        <li><a href="comunidad.html" class="nav__link" data-i18n="nav.community">💬 Comunidad</a></li>
+                        <li><a href="reservas.html" class="nav__link" data-i18n="nav.booking">🎫 Reservas</a></li>
+                        <li><a href="ayuda.html" class="nav__link nav__link--active" data-i18n="nav.help">❓ Ayuda</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header__actions">
+                    <button class="btn-lang" id="lang-toggle" data-i18n-aria-label="header.changeLanguage" aria-label="Cambiar idioma">
+                        <span class="lang-icon">🌐</span>
+                        <span class="lang-text" data-i18n="lang.current">ES</span>
+                    </button>
+                    <a href="perfil.html#favorites" class="btn-icon" id="favorites-link" data-i18n-aria-label="header.favorites" aria-label="Ver favoritos">
+                        <span class="icon-heart">🤍</span>
+                        <span class="favorites-count" id="favorites-count">0</span>
+                    </a>
+                    <button class="btn-primary" id="user-session">Iniciar Sesión</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="help-hero">
+        <div class="container">
+            <div class="help-hero__icon">
+                <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="40" cy="40" r="38" stroke="white" stroke-width="4"/>
+                    <text x="40" y="55" font-size="48" fill="white" text-anchor="middle" font-family="Arial, sans-serif">?</text>
+                </svg>
+            </div>
+            <h1 class="help-hero__title" data-i18n="help.title">Centro de Soporte</h1>
+            <p class="help-hero__subtitle" data-i18n="help.subtitle">Estamos aquí para ayudarte. Encuentra respuestas rápidas o contáctanos directamente</p>
+        </div>
+    </section>
+
+    <!-- Contact Options -->
+    <div class="contact-options">
+        <div class="container">
+            <div class="contact-grid">
+                <button class="contact-card" id="faq-btn">
+                    <span class="contact-card__icon">📋</span>
+                    <span class="contact-card__title" data-i18n="help.faqTitle">Preguntas Frecuentes</span>
+                    <span class="contact-card__desc" data-i18n="help.faqDesc">Consulta las dudas más comunes</span>
+                </button>
+                
+                <button class="contact-card" id="chat-btn">
+                    <span class="contact-card__icon">💬</span>
+                    <span class="contact-card__title" data-i18n="help.liveChat">Chat en vivo</span>
+                    <span class="contact-card__desc" data-i18n="help.liveChatDesc">Habla con nuestro equipo ahora</span>
+                </button>
+                
+                <button class="contact-card" id="phone-btn">
+                    <span class="contact-card__icon">📞</span>
+                    <span class="contact-card__title" data-i18n="help.contactUs">Contacto</span>
+                    <span class="contact-card__desc" data-i18n="help.contactUsDesc">Llámanos o envía un email</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title" data-i18n="help.faqTitle">Preguntas Frecuentes</h2>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span data-i18n="help.faq.q1">¿Cómo puedo cancelar mi reserva?</span>
+                        <span class="faq-icon">−</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p data-i18n="help.faq.a1.intro">Puedes cancelar tu reserva desde tu perfil en la sección "Mis Reservas". Las políticas de cancelación varían según el destino y el proveedor:</p>
+                        <ul>
+                            <li><strong data-i18n="help.faq.a1.flexible">Cancelación flexible:</strong> <span data-i18n="help.faq.a1.flexibleDesc">Hasta 24 horas antes del viaje con reembolso completo</span></li>
+                            <li><strong data-i18n="help.faq.a1.moderate">Cancelación moderada:</strong> <span data-i18n="help.faq.a1.moderateDesc">Hasta 7 días antes con reembolso del 50%</span></li>
+                            <li><strong data-i18n="help.faq.a1.strict">Cancelación estricta:</strong> <span data-i18n="help.faq.a1.strictDesc">No se permiten cancelaciones</span></li>
+                        </ul>
+                        <p data-i18n="help.faq.a1.footer">Recuerda revisar los términos específicos de tu reserva antes de proceder.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span data-i18n="help.faq.q2">¿Qué incluye el precio del viaje?</span>
+                        <span class="faq-icon">−</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p data-i18n="help.faq.a2.intro">Cada paquete de viaje incluye diferentes servicios. Generalmente incluyen:</p>
+                        <ul>
+                            <li data-i18n="help.faq.a2.accommodation">Alojamiento según la categoría seleccionada</li>
+                            <li data-i18n="help.faq.a2.transport">Transporte local o tickets de transporte</li>
+                            <li data-i18n="help.faq.a2.guide">Guía turístico en idioma español/inglés</li>
+                            <li data-i18n="help.faq.a2.tickets">Entradas a atracciones principales</li>
+                            <li data-i18n="help.faq.a2.insurance">Seguro de viaje básico</li>
+                        </ul>
+                        <p><strong data-i18n="help.faq.a2.notIncluded">No incluye:</strong> <span data-i18n="help.faq.a2.notIncludedDesc">Vuelos internacionales, comidas (salvo especificación), propinas, gastos personales.</span></p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span data-i18n="help.faq.q3">¿Puedo viajar con mascotas?</span>
+                        <span class="faq-icon">−</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p data-i18n="help.faq.a3.intro">La política de mascotas depende del destino y el alojamiento seleccionado:</p>
+                        <ul>
+                            <li data-i18n="help.faq.a3.small">Algunos alojamientos aceptan mascotas pequeñas (hasta 10kg) con cargo adicional</li>
+                            <li data-i18n="help.faq.a3.certificate">Se requiere certificado de vacunación y salud al día</li>
+                            <li data-i18n="help.faq.a3.carrier">Las mascotas deben viajar en transportadora en vehículos compartidos</li>
+                            <li data-i18n="help.faq.a3.quarantine">Algunos países requieren cuarentena o documentación especial</li>
+                        </ul>
+                        <p data-i18n="help.faq.a3.footer">Usa el filtro "Pet-friendly" en la búsqueda para ver destinos que aceptan mascotas.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span data-i18n="help.faq.q4">¿Necesito visa para los destinos?</span>
+                        <span class="faq-icon">−</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p data-i18n="help.faq.a4.intro">Los requisitos de visa varían según tu nacionalidad y el destino:</p>
+                        <ul>
+                            <li><strong data-i18n="help.faq.a4.eu">Unión Europea:</strong> <span data-i18n="help.faq.a4.euDesc">Ciudadanos UE no requieren visa para estadías cortas</span></li>
+                            <li><strong data-i18n="help.faq.a4.us">Estados Unidos:</strong> <span data-i18n="help.faq.a4.usDesc">Se requiere ESTA o visa B1/B2 según país de origen</span></li>
+                            <li><strong data-i18n="help.faq.a4.asia">Asia:</strong> <span data-i18n="help.faq.a4.asiaDesc">Algunos países ofrecen visa on arrival (Tailandia, Indonesia)</span></li>
+                            <li><strong data-i18n="help.faq.a4.latam">América Latina:</strong> <span data-i18n="help.faq.a4.latamDesc">Mayoría de países no requiere visa para turismo (hasta 90 días)</span></li>
+                        </ul>
+                        <p data-i18n="help.faq.a4.footer">Consulta la página del destino para información específica o contacta con nuestro equipo.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span data-i18n="help.faq.q5">¿Qué pasa si mi vuelo se retrasa?</span>
+                        <span class="faq-icon">−</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p data-i18n="help.faq.a5.intro">Si tu vuelo sufre retrasos o cancelaciones:</p>
+                        <ul>
+                            <li data-i18n="help.faq.a5.contact">Contacta inmediatamente con nuestro equipo de soporte 24/7</li>
+                            <li data-i18n="help.faq.a5.assistance">Proporcionamos asistencia para reorganizar transfers y primera noche de alojamiento</li>
+                            <li data-i18n="help.faq.a5.insurance">El seguro de viaje cubre gastos adicionales por retrasos superiores a 6 horas</li>
+                            <li data-i18n="help.faq.a5.noPenalty">No se aplican penalizaciones por llegadas tardías fuera de tu control</li>
+                        </ul>
+                        <p data-i18n="help.faq.a5.footer">Guarda todos los documentos de la aerolínea para reclamaciones posteriores.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span data-i18n="help.faq.q6">¿Puedo modificar las fechas de mi viaje?</span>
+                        <span class="faq-icon">−</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p data-i18n="help.faq.a6.intro">Sí, puedes modificar las fechas de tu viaje:</p>
+                        <ul>
+                            <li><strong data-i18n="help.faq.a6.days30">Hasta 30 días antes:</strong> <span data-i18n="help.faq.a6.days30Desc">Cambio gratuito sujeto a disponibilidad</span></li>
+                            <li><strong data-i18n="help.faq.a6.days15">15-29 días antes:</strong> <span data-i18n="help.faq.a6.days15Desc">Cargo del 10% sobre el valor de la reserva</span></li>
+                            <li><strong data-i18n="help.faq.a6.days7">7-14 días antes:</strong> <span data-i18n="help.faq.a6.days7Desc">Cargo del 25% sobre el valor de la reserva</span></li>
+                            <li><strong data-i18n="help.faq.a6.days6">Menos de 7 días:</strong> <span data-i18n="help.faq.a6.days6Desc">Cargo del 50% sobre el valor de la reserva</span></li>
+                        </ul>
+                        <p data-i18n="help.faq.a6.footer">Los cambios están sujetos a disponibilidad y pueden requerir ajuste de precio si las tarifas han cambiado.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Still Need Help Section -->
+    <section class="need-help">
+        <div class="container">
+            <h2 class="need-help__title" data-i18n="help.needHelpTitle">¿No encuentras lo que buscabas?</h2>
+            <p class="need-help__subtitle" data-i18n="help.needHelpSubtitle">Nuestro equipo está disponible para ayudarte</p>
+            <div class="need-help__actions">
+                <button class="btn-primary" id="start-chat">
+                    <span>💬</span> <span data-i18n="help.startChat">Iniciar chat</span>
+                </button>
+                <button class="btn-secondary" id="send-email">
+                    <span>📧</span> <span data-i18n="help.sendEmail">Enviar correo</span>
+                </button>
+            </div>
+            <p class="need-help__info"><span data-i18n="help.responseTime">Tiempo de respuesta promedio:</span> <strong data-i18n="help.lessThan2Hours">menos de 2 horas</strong></p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__content">
+                <div class="footer__section footer__brand">
+                    <div class="footer__logo">
+                        <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="40" height="40" rx="8" fill="#8B4513"/>
+                            <path d="M20 10L28 18L20 26L12 18L20 10Z" fill="#F4E4C1"/>
+                        </svg>
+                        <span>Nomad Trails</span>
+                    </div>
+                    <p class="footer__tagline" data-i18n="footer.tagline">Tu compañero de viajes auténticos</p>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__title" data-i18n="footer.links">Enlaces</h4>
+                    <ul class="footer__links">
+                        <li class="footer__link"><a href="explore.html" data-i18n="footer.explore">Explorar</a></li>
+                        <li class="footer__link"><a href="comunidad.html" data-i18n="footer.community">Comunidad</a></li>
+                        <li class="footer__link"><a href="reservas.html" data-i18n="footer.bookings">Reservas</a></li>
+                        <li class="footer__link"><a href="ayuda.html" data-i18n="footer.help">Ayuda</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__title" data-i18n="footer.legal">Legal</h4>
+                    <ul class="footer__links">
+                        <li class="footer__link"><a href="#privacidad" data-i18n="footer.privacy">Privacidad</a></li>
+                        <li class="footer__link"><a href="#terminos" data-i18n="footer.terms">Términos</a></li>
+                        <li class="footer__link"><a href="#cookies" data-i18n="footer.cookies">Cookies</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__title" data-i18n="footer.contact">Contacto</h4>
+                    <div class="footer__contact-item">
+                        <span>📧</span>
+                        <a href="mailto:soporte@nomadtrails.com">soporte@nomadtrails.com</a>
+                    </div>
+                    <div class="footer__contact-item">
+                        <span>📞</span>
+                        <a href="tel:+34900123456">+34 900 123 456</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p class="footer__text" data-i18n="footer.rights">&copy; 2025 Nomad Trails. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="script/utils.js"></script>
+    <script src="script/demo-users.js"></script>
+    <script src="script/auth.js"></script>
+    <script src="script/favorites.js"></script>
+    <script src="script/i18n.js"></script>
+    <script src="script/ayuda.js"></script>
+    <script src="script/main.js"></script>
+</body>
+</html>
