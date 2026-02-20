@@ -1,0 +1,14 @@
+[
+  {
+    "user": "raspberry15",
+    "msg": "hola",
+    "hmac_hex": "674af90a0ccb316d02d8979dcab8e640dbc903e2dcfe6a737dccfd61d75e3d30",
+    "timestamp": "27/11/2025 23:20"
+  },
+  {
+    "user": "blackberry15",
+    "msg": "alguien tiene las respuestas del examen?",
+    "hmac_hex": "8c2463007ace654b918deadc7c4c7d041bb07d444657f0fb0dfe097cd51e9b64",
+    "timestamp": "27/11/2025 23:46"
+  }
+]

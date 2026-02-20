@@ -1,0 +1,76 @@
+[
+  {
+    "name": "routers_es.pdf",
+    "owner": "strawberry15",
+    "path": "c:\\Users\\marti\\app-criptografia\\main\\data\\files\\routers_es.pdf.enc",
+    "nonce": "c39236a8db8ad5485a2ef779",
+    "tag": "3cc501d6cc95c4f37172f5f816dba5b8",
+    "enc_keys": {
+      "blueberry15": "92c99f7b1288957d68522605e33a5c13d21868638366db17cef60491a45a8fee0170d81db5a96d3b9bfa9c2fe6bbc773e1830e61c734df73c5c8ec9771947f1c309e9721964b7cc32c40f833ca621ba4a8764e29dc37f6637e5fa8db903d069159842112f84b8f4efa7214ac9d40c679353203babfcc8a597cee9986ca2a78edf8ceb0ffa4c8f974d3cc76235c5bbe1966e36e299a0c6866d318a738208b317ab821d843921e439c119d96c814f0dd2a30e9abb13adc46d35efb8ccf5228464e796a1db492a2951a4fcd63afa4893f78d79d47df321d4d14f171dc931367f62e449037a18b0ea3bb809712ddd3d276c716050307796fbd0c9565ba35dfff108a",
+      "strawberry15": "962ffe24d714fa8c3c82d943db0e19c6e143c3dd85be53b4d05703fc68fcc17ce973ac45355a5310f7c4f3b8a54c73b21f0cba835372a154e9394abcc033d35b844387b167fb2486f7f3598cf8ca4422ebb56f36afd787de2932acede87a7b80d70da0436c9ee493581e48ed2fa5f102e237f9a22507ef49bccc62bfbc1f923b5c81876415f41f14c64c3d98d85ac75a2affec6921462def5bf4142387b5697021301279bef404ee96759aa755a43f306873fb31f27f5431771bd485c0ab486c66add7b084e56c2446e6c004316406b5dea5f987934431f9d534f427af2efbef9e47eafa3a3065687ce163301e6b6109d5e80a1b3349a0c588493558659ea4cd"
+    },
+    "signer": "strawberry15",
+    "signature": "nEAcYM7tlxtY3pQ3KX6DZGx3t3zJAhjJFexm9Whdy3HZVRn1ogltiuki5Rcq2a+XroHXedklDZDkFDTTz27YG/7r4A1A2j1qy8J34sAioAm9p5mI0UsTaMeWtgqneDj+h/cyf+3u8EPeU4fyDRGR01lFQ9WUT5SjN49a9lwjVciw3QzRRj0JGA1qJVuo4Q3g6O2npVhoJj1qtkAHjhlhTqh2/lWhgMM7aq6ITTNO6JEi4k54yFyXia6uwITOOkNPvfMGQjQIxchokfQS4niAIVzJS4vrY+C4d8xbkV2Rc+6uAdPR9EmL6AKg98BL9vS4nSAss8zykx2CxyU6sDul4Q==",
+    "sign_algorithm": "RSA-PSS-SHA256",
+    "scope": "shared"
+  },
+  {
+    "name": "m4-3.pdf",
+    "owner": "blackberry15",
+    "path": "c:\\Users\\marti\\app-criptografia\\main\\data\\files\\m4-3.pdf.enc",
+    "nonce": "dfa5f2cd0fa5e10784f9da8b",
+    "tag": "8390d8d4e926a3361de01807d2b2b4d0",
+    "enc_keys": {
+      "strawberry15": "05570f76dcc793b317c36652e3d935f0d98e4024b1506a6a46cb9e4f653d96c040643c7b99b35b68dfee7471e80633fa2faedfafd24a7e047a86cd1d4aa2a14d750d3bff6d050e9b3bd8510ed9dc1cb6378c22a244c5662c59a6b773e5a9653d810cc03200b72cb9991e6bcce2d27f53881b633c7a82d943179f08ce48eec6f3278ffedf01c80732aa9ecb4912e7cf9b5eb982a17e40b96dab25c2626fda3ec135ae456c8cc4dd620079bda290d713421d3650eb5f7a4f42531709176cb594b7a90b5d10522aaa23b2939f050b004407f4f48e12c0d168137a84af0d0691f48bcc96b415c75e00aca060be61141791f3756279780dae7189ba4b892bef6df545",
+      "blackberry15": "aee4e44436d206a19a854e6962db10eeb8a8f98e579a8c854b0df884ab0c718aa5382e51114eadbc3dcc206db6c9fa41c42288446e6b320e82e963e6e35ea911f39ddfbe09913517e32ca07c4383d5904046abb9197c74fed471d6b439138c9475af3282cdbd2a812b61e817f92b7bfef4ace176a0128d9dcd4272209a3b584fe8ebe5762f47d218cad98014e83a5c147e2cb12a159f400308db28d4dacdec43ad581b7bddae424178ac818c66ebdb874b2efbb74afb7c37c51d63903c02817cd78056a5f63a883a647a50026eead7aabd80135237818641cf08c68bb50f08884a829e5897da5b88073291b2dfd7c870d4818b694144f68ed606bc06c3f1da78"
+    },
+    "signer": "blackberry15",
+    "signature": "UMn5Cjajbr2XI1nUkPzMS/2mzWQ4gnIOWYkLX/t3K/fv+CKhfb5NWmDD23duBANc1Fk/D389Hx0kiOXwguA4ujO7wR5V+0q15N4V4pneDV20izrmT8+UVj3nV2IfGVoALcCUwHUwbo8A8A9/oNaNjB+CQ1FvdAJiA7l1FMC/mLGcERgo/YP5FO+nzfyzJDrrRCkjlK4JBeRFdQKss9TmSaaPPsXtvP8R9CmdeX8DZO0UGcLJ3AWxUCmyQATBru65Q4jnipkz+NbkSgsSwxS6sYRjmeeR+zU3xQu4VKqTVtN4XYqZ1J4dLwRWqFJT4cOC8jhrhXnDH8Go3zMoDbmG1w==",
+    "sign_algorithm": "RSA-PSS-SHA256",
+    "scope": "shared"
+  },
+  {
+    "name": "report.pdf",
+    "owner": "blackberry15",
+    "path": "c:\\Users\\marti\\app-criptografia\\main\\data\\files\\report.pdf.enc",
+    "nonce": "b4933fec04cbf001bfe07fb4",
+    "tag": "c65e99e77ab97d2616e7e6eb560086d3",
+    "enc_keys": {
+      "raspberry15": "d56ace31a778326fa7be79d6c7ee332bcbde2b0902ea47e0eed211841e5b77b1cacd92a29e81b3d184c786773b0998acb38f98bbf560a23c45f95ef98a3585dcebae3845b0f3de5ddc7edc49e974165c98298591dd493c302a80524f1d3e474e9294f9199d28e3d2abd267532221332503c249fdb85d69e3132e7f65590384752ba0234771c71a5701b277161f11539658f99efd4124516351ca180b8b2ab5b2b5d57323b833321e59db9ecabd54008386aaf189018346dc860a6de7d57c8be668ff5949aeb19c2a5a762b228184beb3bec5d1e380ac903c731a6dec3bbd37d4d688d382b3965fa405ac8fbb09f98204f8e6ea3422e0ed839ef8ee482c6da97b",
+      "blackberry15": "2b75dc1a67084a8603cac8e48f7829a4df150bf40d170fd47e3242137613401f43d8c58dd53c120d1353baf66ed7b24f35aa7a9317f2a62ed6281d040a3273f060aa1571ecc50f0801a7b3627920805b23a77fb57589abb44a39f361fa7ec14a1d5c0aede4e8b5dba42f9c499a28f6e2ef58962d38f5cfc06f3b6d1a52d90130d6a25ba4db299f806f3f91d8f080f8a750b6060a6bbd62616a66671c1ab34a445d2116766167fd996e3ea600ed5b2c09483f347ce1552d02f03c02a23d56ca7b6527266a7a178cc4d3afd50bca2d468e942a4731e59e0143787f826691324fef0385f51b1d356759abb66b6c6f81f34c94752a0e2b832426479aba3ac15c2ea4"
+    },
+    "signer": "blackberry15",
+    "signature": "swYW4OJHF4boVgcAXeFGiDmejhBU+7fSpEuqBXftVtWD+iETiUgbr5NiiLlTUV/Ln2qaviZWiLSxTasjEQixwXEAJPOu/jT+kEh//w2ZY64bDMvcruYR8hDm5nwmO/8OItjuljNNV7A9WjMQGoo8a2fvcYFaw5TBLG36cS4bnDDUAo5hwsfHxfl7MDVlix9CRQtbNlkpebTYrbjacCFwCw5hnzPiLh5AtWlNoxLmHFZSEEVnQ/DPJoi5UpS9bYz7Yp+edskhh2EbpZQ3N1Thw6rj04x5r1MuFvof2xKq3OGRssIGRJVLx4R4sXeIgO4LcQMo3RcnwzKLF8do4hWRBg==",
+    "sign_algorithm": "RSA-PSS-SHA256",
+    "scope": "shared"
+  },
+  {
+    "name": "3_direccionamiento.pdf",
+    "owner": "cranberry15",
+    "path": "c:\\Users\\marti\\app-criptografia\\main\\data\\files\\3_direccionamiento.pdf.enc",
+    "nonce": "c276b225e598ac999454195e",
+    "tag": "e425eaa69cca59c2a9eb1e1931bc7d00",
+    "enc_keys": {
+      "blackberry15": "7132039aab85124b2c32a1c688fdc96e8c3446095c451674cdd5b0d533149c751497d9b0f47e5345f5898508678d23ee53f93519e02b426419ff9a520c1ed3f6e0acf7e1dfb5ea5de09555abc5c835707cdb37e4ff57e4877b7087412b56d433863e76c9d78f33dc4c30d1fea0f06fcfb7b51f59c1b4fe76b84460194695f27c1598a48f8b54585685b63a4d2791c3ad8825acf354f60d6fc034a94c17929114e25a000d39b164ea094c9a2477d9772983d9f70fae7854fd9576a41093d71250c9494dfac3b9db2925f600509114f19fdb0474e66afaaa093a8bee315517b93c94d76bf5cd135b707db8debef8980fd543537bdc93dacda79bd9bbe3b3098b2a",
+      "cranberry15": "b21cb9418888d52a9e538029ed00c1310b9fd58f613ec354056c175d32fc2063b332a701b5862aef24458a50c13294beba304ac81eb95570a7e687072151e86a2291fa22a38d58db1e301f5737a93daffd01820ef4447474074de49cdc036424d970b6924be065032c26e6e11626bb20891f73de2ba3435b0e0af718c2dc24a035f19569090f1e3fcc9a1afb9cf774b92c7b6fae27e83f3e8a146711594c7231107a66426b77565a5fcea7b903d0618b2ad325b587d1a3a958597fb369fccba3e9347f89ba7d2e67013f4778cd79882fd4899cf85d913cc64a9740089a57da64dd07141d605c667eb7369c30c4656384c4427581bf6d7f76344f80c5177f9a21"
+    },
+    "signer": "cranberry15",
+    "signature": "Rl9vGLqEEY7xI4lZsuGlxF8O/6539khT9OSlRbYUhKzs3f9iACAGesAj1TT7QmeNjdV8C5dl7Fovp+BbyHzUxeUrqXjcPPTdRMYQ2xHVQGXSnI7rFaVx3Y/LmFcUjWTsjptbmVYj/MQGqCzwqFL3SEQwBHL9ToASaLW674CDCzTUM8ocNCBW+bE+hfCbRt9QiHcOF/M/0omBBO+wYkUvFnv8KcHHukR+QM8xZ9F4DYG7xT5u0wrzwcqImggoS0TXcYAE3ZsRC9Wt3DjAYB+bFQMvq5H++meerOs/LUUs0wDGRd0TP3O0wmnR90j2hbN8RhRVsa04JUcqR8mxDYavJg==",
+    "sign_algorithm": "RSA-PSS-SHA256",
+    "scope": "shared"
+  },
+  {
+    "name": "es-ex-m4-01.pdf",
+    "owner": "blackberry15",
+    "path": "c:\\Users\\marti\\app-criptografia\\main\\data\\files\\es-ex-m4-01.pdf.enc",
+    "nonce": "9c635150e95164c63a534b76",
+    "tag": "3ea5d1cf1a8a3414512e15b4fe091135",
+    "enc_keys": {
+      "blackberry15": "798c89e0f3eae3de23fe382802d21f30d4259ebb7f62a8ffe082f867ea71f51a8718b980cb5de574aabea591f3f4b544919b2dd181c563788e9c78efb55bfe136507f253fb86b825bd18b9fa92313cfc098a8070247d3b039bf35e4f7bbf2e747d53519113aefd99707205f85e047539fd3d3e5ccc783e9d63eb9f83f09c539623099f1b33e9e4803e67321ad8be74996c44b1eb84da2d79157056208b8744711885fdfe1322bb471ff9e59e6f8a28ad6a3bb644972d58ca89e89d5e4e897bcac2197c100cdd5e676a830a73b2fdd5011cbf8a645c4c87e87ffdfe5a47532a1dd5bf403f0a8156f6beb8528071655579252b290c8e21c8595dd07f3d5a8a2a34"
+    },
+    "signer": "blackberry15",
+    "signature": "b4DjIPs+yFaQwmynHoXZbZ5zLga6XNp6TPN9xRY+A9urqrXgaGhYbAZRWt23B3krW72fsIhHNDUCnzeg/80NgxG0FgFUIX2w62ChNStEDcasjHJnJD9yJoOulpg7ywEHDf3y3isttWYTI7DHBJF7dHBm22J8rQjQwWBgSwP/QWOnVEWv02vWVA5LEuGZDZZxnvYirMOuYR6m31nKjiP+FlT9sBTaxj95QcvqKAfqbzqQJMTvXKVXMzm4XKIb+cPExWeNFPk66r53ghFT94s+x7+9CUzdJ52Uq/YQoaE0wQ21tkpj2F2mh2cnyxbedq9HSwWu989Vk+xrryFkuwUWjQ==",
+    "sign_algorithm": "RSA-PSS-SHA256",
+    "scope": "private"
+  }
+]
